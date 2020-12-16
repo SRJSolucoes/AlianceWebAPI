@@ -1,0 +1,4 @@
+[{
+    "Idsegmento" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Descricao" : "String Tamanho:80 Preenchimento: Obrigatório",
+}]

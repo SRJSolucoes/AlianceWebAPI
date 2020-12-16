@@ -1,0 +1,6 @@
+[{
+    "Iditemtabpreco" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Idtabelapreco" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+    "Iditemvenda" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+    "Preco" : "Decimal Tamanho:8 Preenchimento: Obrigatório",
+}]

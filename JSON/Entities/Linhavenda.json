@@ -1,0 +1,8 @@
+[{
+    "Idlinhavenda" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Descricao" : "String Tamanho:150 Preenchimento: Obrigatório",
+    "Idloja" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+    "Numniveis" : "int Tamanho:10 Preenchimento: Obrigatório",
+    "Percretorno" : "Decimal Tamanho:5 Preenchimento: Opcional",
+    "Vbexclusivo" : "Char Tamanho:1 Preenchimento: Obrigatório",
+}]

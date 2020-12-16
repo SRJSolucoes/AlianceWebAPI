@@ -1,0 +1,6 @@
+[{
+    "Idtabelapreco" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Descricao" : "String Tamanho:90 Preenchimento: Obrigatório",
+    "Status" : "Char Tamanho:1 Preenchimento: Obrigatório",
+    "Idloja" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+}]

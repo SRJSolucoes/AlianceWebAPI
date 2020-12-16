@@ -1,0 +1,11 @@
+[{
+    "Iditemvenda" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Nomeitemvenda" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Idloja" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+    "Idlinhavenda" : "Entidade Tamanho:10 Preenchimento: Obrigatório",
+    "Fotodivulgacao" : "byte[] Tamanho:0 Preenchimento: Opcional",
+    "Fichatecnica" : "byte[] Tamanho:0 Preenchimento: Opcional",
+    "Precosugerido" : "Decimal Tamanho:8 Preenchimento: Opcional",
+    "Vbredeaberta" : "Char Tamanho:1 Preenchimento: Opcional",
+    "Tipoitem" : "Char Tamanho:1 Preenchimento: Obrigatório",
+}]

@@ -1,0 +1,17 @@
+[{
+    "Idempresa" : "PK*  int  Tamanho:10 Preenchimento: Obrigatório",
+    "Razaosocial" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Nomefantasia" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Cnpj" : "String Tamanho:18 Preenchimento: Opcional",
+    "Tplogradouro" : "String Tamanho:5 Preenchimento: Opcional",
+    "Logradouro" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Complemento" : "String Tamanho:80 Preenchimento: Opcional",
+    "Numero" : "String Tamanho:4 Preenchimento: Obrigatório",
+    "Bairro" : "String Tamanho:60 Preenchimento: Opcional",
+    "Cidade" : "String Tamanho:80 Preenchimento: Obrigatório",
+    "Uf" : "String Tamanho:2 Preenchimento: Obrigatório",
+    "Cep" : "String Tamanho:9 Preenchimento: Obrigatório",
+    "Pais" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Email" : "String Tamanho:255 Preenchimento: Obrigatório",
+    "Telefone" : "String Tamanho:20 Preenchimento: Opcional",
+}]
