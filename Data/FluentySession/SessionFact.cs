@@ -17,7 +17,10 @@ namespace Data.FluentySession
                 //var connectionStringMySQL = "Server = acesso.cyzeslms577w.us-east-2.rds.amazonaws.com; Port = 3306; Database = Acesso; Uid = O2Si; Pwd = O2SiT3cnologia";
                 //frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "mysql");
 
-                var connectionStringMySQL = "SERVER = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = HOM))); uid = ATUAL_SHP; pwd = ATUAL_SHP"; ;
+                //var connectionStringMySQL = "SERVER = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = HOM))); uid = ATUAL_SHP; pwd = ATUAL_SHP";
+                
+                // connectionstring template copiado do ItabusCore
+                var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=ATUAL_SHP;Password=ATUAL_SHP;";
                 frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
 
             }
