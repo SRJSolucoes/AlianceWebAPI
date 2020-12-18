@@ -2,7 +2,7 @@
 using Domain.DTOs;
 using Domain.Entidades;
 using Domain.Interfaces;
-using Domain.Models;
+using System.Linq;
 using Service.Interfaces;
 using System;
 using System.Collections.Generic;

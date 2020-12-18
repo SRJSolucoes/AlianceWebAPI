@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Domain.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 using System;
@@ -21,7 +22,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetAllRequisicao")]
-        public async Task<ActionResult> GetAllRequisicao()
+        public async Task<ActionResult> GetAllRequisicao([FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -40,7 +41,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetRequisicaoporCodigo")]
-        public async Task<ActionResult> GetRequisicaoporCodigo([FromHeader] int Requisicao)
+        public async Task<ActionResult> GetRequisicaoporCodigo([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -59,7 +60,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetItemdaRequisicao")]
-        public async Task<ActionResult> GetItemdaRequisicao([FromHeader] int Requisicao)
+        public async Task<ActionResult> GetItemdaRequisicao([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetAnexodaRequisicao")]
-        public async Task<ActionResult> GetAnexodaRequisicao([FromHeader] int Requisicao)
+        public async Task<ActionResult> GetAnexodaRequisicao([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
