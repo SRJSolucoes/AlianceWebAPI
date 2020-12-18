@@ -8,7 +8,9 @@ namespace Cross.Cutting.Mapping
     { 
         public DtoToModelProfile() 
         {
-            CreateMap<RequisicaoModel, RequisicaoDTO>().ReverseMap();
-        } 
+            CreateMap<RequisicaoDTO, RequisicaoModel>().ReverseMap();
+            CreateMap<ITRequisicaoDTO, ITRequisicaoModel>().ReverseMap();
+            CreateMap<AnexoRequisicaoDTO, AnexoRequisicaoModel>().ReverseMap();
+        }
     }      
 } 

@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,36 +6,34 @@ namespace Domain.DTOs
 {
     public class RequisicaoDTO
     {
-        public string NOME { get; set; }
+        public string? ReqNumero { get; set; }
+        public DateTime? ReqData { get; set; }
+        public string? Empresa { get; set; }
+        public string? Empresa_Nome { get; set; }
+        public string? Moeda { get; set; }
+        public string? DS_Moeda { get; set; }
+        public string? TipoReq { get; set; }
+        public string? DS_TipoReq { get; set; }
+        public string? Setor { get; set; }
+        public string? Requisitante { get; set; }
+        public string? Posicao_Funcional { get; set; }
+        public string? DS_Posicao_Funcional { get; set; }
+        public string? Observacao { get; set; }
+        public DateTime? DataMov { get; set; }
+        public string? Etape { get; set; }
+        public string? Tpoper { get; set; }
+        public string? VBReqcompra { get; set; }
+        public string? Usuario { get; set; }
+        public string? Ordem { get; set; }
+        public string? Justificativa { get; set; }
+        public string? Devolucao { get; set; }
+        public string? Protocolo { get; set; }
+        public string? ForaPrazo { get; set; }
+        public string? StatusAprv { get; set; }
+        public string? Impresso { get; set; }
+        public string? Encerram { get; set; }
+        public string? Destinacao { get; set; }
+        public string? CCusto { get; set; }
 
-        //public string NUMERO { get; set; }
-        //public string REQDATA { get; set; }
-        //public string EMPRESA { get; set; }
-        //public string EMPRESANOME { get; set; }
-        //public string TIPOREQ { get; set; }
-        //public string TIPOREQDESCRICAO { get; set; }
-        //public string SETOR { get; set; }
-        //public string REQUISITANTE { get; set; }
-        //public string POSICAOFUNCIONAL { get; set; }
-        //public string POSICAOFUNCIONALDESCRICAO { get; set; }
-        //public string OBSERVACAO { get; set; }
-        //public string DATAMOV { get; set; }
-        //public string ETAPA { get; set; }
-        //public string TPOPER { get; set; }
-        //public string REQCOMPRA { get; set; }
-        //public string USUARIO { get; set; }
-        //public string ORDEM { get; set; }
-        //public string JUSTIFICATIVA { get; set; }
-        //public string EXP { get; set; }
-        //public string DEVOLUCAO { get; set; }
-        //public string ORDPCP { get; set; }
-        //public string PROTOCOLO { get; set; }
-        //public string FORAPRAZO { get; set; }
-        //public string STATUSDAAPROVACAO { get; set; }
-        //public string IMPRESSO { get; set; }
-        //public string ENCERRAMENTO { get; set; }
-        //public string DESTINACAO { get; set; }
-        //public string CENTRODECUSTO { get; set; }
-        //public string CANDIDATOAPROVADOR { get; set; }
     }
 }

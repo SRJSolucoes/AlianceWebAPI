@@ -20,7 +20,8 @@ namespace PadraoWebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetAll()
+        [Route("/GetAllRequisicao")]
+        public async Task<ActionResult> GetAllRequisicao()
         {
             if (!ModelState.IsValid)
             {
@@ -29,7 +30,64 @@ namespace PadraoWebApi.Controllers
 
             try
             {
-                return Ok(await _service.GetAll());
+                return Ok(await _service.GetAllRequisicao());
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("/GetRequisicaoporCodigo")]
+        public async Task<ActionResult> GetRequisicaoporCodigo([FromHeader] int Requisicao)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.GetRequisicaoporCodigo(Requisicao));
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("/GetItemdaRequisicao")]
+        public async Task<ActionResult> GetItemdaRequisicao([FromHeader] int Requisicao)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.GetItemdaRequisicao(Requisicao));
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("/GetAnexodaRequisicao")]
+        public async Task<ActionResult> GetAnexodaRequisicao([FromHeader] int Requisicao)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.GetAnexodaRequisicao(Requisicao));
             }
             catch (ArgumentException ex)
             {
