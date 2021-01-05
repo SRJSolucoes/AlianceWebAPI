@@ -2,10 +2,10 @@
 using Domain.DTOs;
 using Domain.Entidades;
 using Domain.Interfaces;
-using System.Linq;
 using Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Service.Services
@@ -34,12 +34,12 @@ namespace Service.Services
             }
         }
 
-        public async Task<IEnumerable<ITRequisicaoDTO>> GetItemdaRequisicao(int Requisicao)
+        public async Task<IEnumerable<ITRequisicaoDTO>> GetItemdaRequisicao(string Requisicao)
         {
             try
             {
                 var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<ITRequisicaoDTO>>(ListEntity);
+                return _mapper.Map<IEnumerable<ITRequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
             }
             catch (Exception ex)
             {
@@ -47,12 +47,12 @@ namespace Service.Services
             }
         }
 
-        public async Task<IEnumerable<AnexoRequisicaoDTO>> GetAnexodaRequisicao(int Requisicao)
+        public async Task<IEnumerable<AnexoRequisicaoDTO>> GetAnexodaRequisicao(string Requisicao)
         {
             try
             {
                 var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<AnexoRequisicaoDTO>>(ListEntity);
+                return _mapper.Map<IEnumerable<AnexoRequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
             }
             catch (Exception ex)
             {
@@ -60,12 +60,12 @@ namespace Service.Services
             }
         }
 
-        public async Task<IEnumerable<RequisicaoDTO>> GetRequisicaoporCodigo(int Requisicao)
+        public async Task<IEnumerable<RequisicaoDTO>> GetRequisicaoporCodigo(string Requisicao)
         {
             try
             {
                 var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<RequisicaoDTO>>(ListEntity);
+                return _mapper.Map<IEnumerable<RequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
             }
             catch (Exception ex)
             {

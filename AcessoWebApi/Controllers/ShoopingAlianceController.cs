@@ -1,4 +1,5 @@
-﻿using Domain.DTOs;
+﻿using Data.FluentySession;
+using Domain.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
@@ -31,6 +32,9 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                // TODO Tentativa de validar o usuário
+                //var factory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+
                 return Ok(await _service.GetAllRequisicao());
             }
             catch (ArgumentException ex)
@@ -41,7 +45,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetRequisicaoporCodigo")]
-        public async Task<ActionResult> GetRequisicaoporCodigo([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
+        public async Task<ActionResult> GetRequisicaoporCodigo([FromHeader] string Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -50,6 +54,9 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                // TODO Tentativa de validar o usuário
+                var factory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+
                 return Ok(await _service.GetRequisicaoporCodigo(Requisicao));
             }
             catch (ArgumentException ex)
@@ -60,7 +67,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetItemdaRequisicao")]
-        public async Task<ActionResult> GetItemdaRequisicao([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
+        public async Task<ActionResult> GetItemdaRequisicao([FromHeader] string Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -69,6 +76,9 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                // TODO Tentativa de validar o usuário
+                var factory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+
                 return Ok(await _service.GetItemdaRequisicao(Requisicao));
             }
             catch (ArgumentException ex)
@@ -79,7 +89,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpGet]
         [Route("/GetAnexodaRequisicao")]
-        public async Task<ActionResult> GetAnexodaRequisicao([FromHeader] int Requisicao, [FromBody] MXMLoginDTO MXMLogin)
+        public async Task<ActionResult> GetAnexodaRequisicao([FromHeader] string Requisicao, [FromBody] MXMLoginDTO MXMLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -88,6 +98,9 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                // TODO Tentativa de validar o usuário
+                var factory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+
                 return Ok(await _service.GetAnexodaRequisicao(Requisicao));
             }
             catch (ArgumentException ex)
