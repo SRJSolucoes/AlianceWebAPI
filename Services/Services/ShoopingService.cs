@@ -65,7 +65,9 @@ namespace Service.Services
             try
             {
                 var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<RequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
+                //var requisicoes = ListEntity.Where(x => x.ReqNumero == Requisicao);
+                var requisicoes = _repository.QuerySelect().Where(x => x.ReqNumero == Requisicao);
+                return _mapper.Map<IEnumerable<RequisicaoDTO>>(requisicoes);
             }
             catch (Exception ex)
             {

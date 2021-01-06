@@ -12,7 +12,8 @@ namespace Data.Mapping
         {
             Table("E_ANEXOREQAPROVAPI_VIEW");
 
-            Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            Id(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            // Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
             Map(x => x.Codigo).Column("CODIGO");
             Map(x => x.Anexo).Column("ANEXO");
             Map(x => x.FileName).Column("FILENAME");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entidades;
 using Domain.Models;
@@ -15,6 +16,7 @@ namespace Domain.Interfaces
         Task<T> SelectAsync(Guid id);
         Task<IEnumerable<T>> GetInatives();
         Task<IEnumerable<T>> SelectAsync();
+        IQueryable<T> QuerySelect();
         Task<bool> ExistsAsync(Guid id);
     }
 }

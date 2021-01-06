@@ -198,6 +198,17 @@ namespace Data.Repository
                 throw ex;
             }
         }
+        public IQueryable<T> QuerySelect()
+        {
+            try
+            {
+                return _session("Acesso").Query<T>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public async Task<IEnumerable<T>> GetInatives()
         {

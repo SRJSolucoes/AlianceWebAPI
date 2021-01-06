@@ -10,7 +10,8 @@ namespace Data.Mapping
         {
             Table("E_REQAPROVAPI_VIEW");
 
-            Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            Id(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            //Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
             Map(x => x.ReqData).Column("REQDATA");
             Map(x => x.Empresa).Column("EMPRESA");
 

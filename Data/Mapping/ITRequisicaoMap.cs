@@ -9,7 +9,8 @@ namespace Data.Mapping
         {
             Table("E_ITREQAPROVAPI_VIEW");
 
-            Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            Id(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
+            //Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
             Map(x => x.NumItem).Column("NUMITEM").Not.Nullable();
             Map(x => x.Estoque).Column("ESTOQUE");
             Map(x => x.Item).Column("ITEM");
