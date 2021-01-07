@@ -198,6 +198,7 @@ namespace Data.Repository
                 throw ex;
             }
         }
+      
         public IQueryable<T> QuerySelect()
         {
             try

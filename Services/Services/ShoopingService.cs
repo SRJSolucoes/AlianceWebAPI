@@ -13,11 +13,16 @@ namespace Service.Services
     public class ShoopingService : IShoopingService
     {
         private IRepository<Requisicao> _repository;
+        private IRepository<ITRequisicao> _itrepository;
+        private IRepository<AnexoRequisicao> _anexorepository;
+
         private readonly IMapper _mapper;
 
-        public ShoopingService(IRepository<Requisicao> repository, IMapper mapper)
+        public ShoopingService(IRepository<Requisicao> repository, IRepository<ITRequisicao> itrepository, IRepository<AnexoRequisicao> anexorepository, IMapper mapper)
         {
             _repository = repository;
+            _itrepository = itrepository;
+            _anexorepository = anexorepository;
             _mapper = mapper;
         }
 
@@ -38,8 +43,8 @@ namespace Service.Services
         {
             try
             {
-                var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<ITRequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
+                var requisicoes = _itrepository.QuerySelect().Where(x => x.ReqNumero == Requisicao);
+                return _mapper.Map<IEnumerable<ITRequisicaoDTO>>(requisicoes);
             }
             catch (Exception ex)
             {
@@ -51,8 +56,8 @@ namespace Service.Services
         {
             try
             {
-                var ListEntity = await _repository.SelectAsync();
-                return _mapper.Map<IEnumerable<AnexoRequisicaoDTO>>(ListEntity.Where(x => x.ReqNumero == Requisicao));
+                var requisicoes = _anexorepository.QuerySelect().Where(x => x.ReqNumero == Requisicao);
+                return _mapper.Map<IEnumerable<AnexoRequisicaoDTO>>(requisicoes);
             }
             catch (Exception ex)
             {

@@ -11,12 +11,12 @@ namespace Data.FluentySession
 
         public static ISessionFactory GetSessionFact(string usuario, string senha)
         {
-            if (frameworkSessionFactory == null)
-            {
+            //if (frameworkSessionFactory == null)
+            //{
                 var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id="+usuario+";Password="+ senha+ ";";
                 frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
 
-            }
+            //}
             return frameworkSessionFactory.CreateSessionFactory();
         }
 

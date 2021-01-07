@@ -6,20 +6,21 @@ namespace Domain.DTOs
 {
     public class ITRequisicaoDTO
     {
-        public string ReqNumero { get; set; }
+        public int Id { get; set; }
+        public String ReqNumero { get; set; }
         public int NumItem { get; set; }
-        public string? Estoque { get; set; }
-        public string? Item { get; set; }
-        public string? Descricao { get; set; }
-        public string? GrupoCTA { get; set; }
-        public Decimal? QtdPedida { get; set; }
-        public string? Unidade { get; set; }
-        public string? Entrega { get; set; }
-        public string? Valor { get; set; }
-        public string? VBUrgente { get; set; }
-        public string? LocalEntrega { get; set; }
-        public string? Mapa { get; set; }
-        public Decimal? QTDAtendida { get; set; }
-        public Decimal? DTAtendida { get; set; }
+        public String Estoque { get; set; }
+        public String Item { get; set; }
+        public String Descricao { get; set; }
+        public String GrupoCTA { get; set; }
+        public Decimal QtdPedida { get; set; }
+        public String Unidade { get; set; }
+        public DateTime Entrega { get; set; }
+        public Decimal Valor { get; set; }
+        public String VBUrgente { get; set; }
+        public String LocalEntrega { get; set; }
+        public String Mapa { get; set; }
+        public Decimal QTDAtendida { get; set; }
+        public DateTime DTAtendida { get; set; }
     }
 }
