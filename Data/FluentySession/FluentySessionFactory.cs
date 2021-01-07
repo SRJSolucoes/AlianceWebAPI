@@ -43,7 +43,6 @@ namespace Data.FluentySession
 
         private ISessionFactory CreateFactory()
         {
-            // TODO Aqui que ta o erro
             IPersistenceConfigurer dbConfig;
             var bancoNoAppConfig = _databaseEngine;
 

@@ -5,6 +5,7 @@ namespace Data.FluentySession
 {
     public static class SessionFact
     {
+        private static IFluentySessionFactory frameworkSessionFactoryUserPas;
         private static IFluentySessionFactory frameworkSessionFactory;
         private static IFluentySessionFactory frameworkSessionFactoryInput;
         private static IFluentySessionFactory frameworkSessionFactoryOutPut;
@@ -14,10 +15,10 @@ namespace Data.FluentySession
             //if (frameworkSessionFactory == null)
             //{
                 var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id="+usuario+";Password="+ senha+ ";";
-                frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
+                frameworkSessionFactoryUserPas = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
 
             //}
-            return frameworkSessionFactory.CreateSessionFactory();
+            return frameworkSessionFactoryUserPas.CreateSessionFactory();
         }
 
         public static ISessionFactory GetSessionFact()

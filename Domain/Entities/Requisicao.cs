@@ -7,7 +7,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entidades
 {
-    // TODO Ajustar com os atributos da VIEW, não esquecer de incluir um ID
     public class Requisicao : EntidadeBase
     {   
         public virtual  String ReqNumero { get; set; }

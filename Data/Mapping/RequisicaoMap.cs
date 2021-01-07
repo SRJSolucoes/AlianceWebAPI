@@ -3,7 +3,6 @@ using FluentNHibernate.Mapping;
 
 namespace Data.Mapping
 {
-    // TODO Ajustar com os atributos da VIEW, não esquecer de incluir um ID
     public class RequisicaoMap : ClassMap<Requisicao>
     {
         public RequisicaoMap()
