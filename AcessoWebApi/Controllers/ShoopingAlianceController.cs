@@ -31,16 +31,16 @@ namespace PadraoWebApi.Controllers
             }
 
             // TODO Tentativa de validar o usuário
-            try
-            {
-                var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
-                var currentSession = sessionFactory.OpenSession();
-                currentSession.Close();
-            }
-            catch (ArgumentException ex)
-            {
+            //try
+            //{
+            //    var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+            //    var currentSession = sessionFactory.OpenSession();
+            //    currentSession.Close();
+            //}
+            //catch (ArgumentException ex)
+            //{
 
-            }
+            //}
 
             try
             {
