@@ -30,17 +30,16 @@ namespace PadraoWebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            // TODO Tentativa de validar o usuário
-            //try
-            //{
-            //    var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
-            //    var currentSession = sessionFactory.OpenSession();
-            //    currentSession.Close();
-            //}
-            //catch (ArgumentException ex)
-            //{
-
-            //}
+            try
+            {
+                var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+                var currentSession = sessionFactory.OpenSession();
+                currentSession.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
 
             try
             {
@@ -59,6 +58,17 @@ namespace PadraoWebApi.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+                var currentSession = sessionFactory.OpenSession();
+                currentSession.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
 
             try
@@ -82,6 +92,17 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+                var currentSession = sessionFactory.OpenSession();
+                currentSession.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+
+            try
+            {
                 return Ok(await _service.GetItemdaRequisicao(Requisicao));
             }
             catch (ArgumentException ex)
@@ -97,6 +118,17 @@ namespace PadraoWebApi.Controllers
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var sessionFactory = SessionFact.GetSessionFact(MXMLogin.Usuario, MXMLogin.Senha);
+                var currentSession = sessionFactory.OpenSession();
+                currentSession.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
 
             try
