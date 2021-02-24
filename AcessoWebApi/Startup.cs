@@ -1,17 +1,22 @@
 ﻿using AutoMapper;
 using Cross.Cutting.DependencyInjection;
 using Cross.Cutting.Mapping;
+using Data.Handlers;
 using Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +36,7 @@ namespace AcessoWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             // Injeção de Dependência
+           
             ConfigureRepository.ConfigureDependenceRepository(services);
             ConfigureService.ConfigureDependenceInjection(services);
 
@@ -135,6 +141,21 @@ namespace AcessoWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseExceptionHandler(a => a.Run(async context =>
+            {
+                var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+                var exception = exceptionHandlerPathFeature.Error;
+
+                if (exception is HttpStatusException httpException)
+                {
+                    context.Response.StatusCode = (int)httpException.Status;
+                }
+
+                var result = JsonConvert.SerializeObject(new { error = exception.Message });
+                context.Response.ContentType = "application/json";
+                
+                await context.Response.WriteAsync(result);
+            }));
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

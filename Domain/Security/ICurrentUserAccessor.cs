@@ -1,4 +1,5 @@
-﻿using Domain.Entidades;
+﻿using Domain.DTOs;
+using Domain.Entidades;
 using System;
 
 namespace AcessoWebApi.Infrastructure.Security
@@ -10,5 +11,7 @@ namespace AcessoWebApi.Infrastructure.Security
         Guid GetCurrentUserID();
         Guid GetCurrentParcID();
         string GetCurrentUserRole();
+        MXMLoginDTO GetMXMLoginFromRequestBody();
+        MXMLoginDTO GetMXMLoginFromRequestHeaderBasic();
     }
 }

@@ -1,8 +1,11 @@
-﻿using FluentNHibernate.Cfg;
+﻿using Data.Handlers;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
+using Oracle.ManagedDataAccess.Client;
 using System;
+using System.Net;
 using Configuration = NHibernate.Cfg.Configuration;
 
 namespace Data.FluentySession
@@ -55,11 +58,25 @@ namespace Data.FluentySession
                 dbConfig = OracleManagedDataClientConfiguration.Oracle10.ConnectionString(c => c.Is(_connectionString));
             }
 
-            return Fluently.Configure()
-                .Database(dbConfig)
-                .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(T).Assembly))
-                .ExposeConfiguration(BuildSchema)
-                .BuildSessionFactory();
+            // dbConfig = SQLiteConfiguration.Standard.ConnectionString("database.db");
+            ISessionFactory sessionFactory = null;
+            try
+            {
+                 sessionFactory = Fluently.Configure()
+                    .Database(dbConfig)
+                    .Mappings(m => m.FluentMappings.AddFromAssembly(typeof(T).Assembly))
+                    .ExposeConfiguration(BuildSchema)
+                    .BuildSessionFactory();
+            }
+            catch (FluentConfigurationException ex)
+            {
+                if (((Oracle.ManagedDataAccess.Client.OracleException)ex.InnerException).Message.Contains("ORA-01017"))
+                {
+                    throw new HttpStatusException(HttpStatusCode.BadRequest, "Usuario ou senha inválido");
+                }
+            }
+
+            return sessionFactory;
         }
     }
 }

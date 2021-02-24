@@ -1,5 +1,9 @@
+using Data.Handlers;
 using Data.Mapping;
 using NHibernate;
+using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Net;
 
 namespace Data.FluentySession
 {
@@ -10,14 +14,16 @@ namespace Data.FluentySession
         private static IFluentySessionFactory frameworkSessionFactoryInput;
         private static IFluentySessionFactory frameworkSessionFactoryOutPut;
 
+        public static string getOracleConnectionString(string usuario, string senha)
+        {
+            return "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=" + usuario + ";Password=" + senha + ";";
+        }
         public static ISessionFactory GetSessionFact(string usuario, string senha)
         {
-            //if (frameworkSessionFactory == null)
-            //{
-                var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id="+usuario+";Password="+ senha+ ";";
-                frameworkSessionFactoryUserPas = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
 
-            //}
+            var connectionStringOracle = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=" + usuario + ";Password=" + senha + ";";
+            frameworkSessionFactoryUserPas = new FluentySessionFactory<RequisicaoMap>(connectionStringOracle, "oracle");
+
             return frameworkSessionFactoryUserPas.CreateSessionFactory();
         }
 
@@ -30,7 +36,7 @@ namespace Data.FluentySession
                 //frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "mysql");
 
                 //var connectionStringMySQL = "SERVER = (DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = HOM))); uid = ATUAL_SHP; pwd = ATUAL_SHP";
-                
+
                 // connectionstring template copiado do ItabusCore
                 var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=ATUAL_SHP;Password=ATUAL_SHP;";
                 frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
