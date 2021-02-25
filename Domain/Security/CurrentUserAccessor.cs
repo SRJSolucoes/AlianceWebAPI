@@ -8,6 +8,7 @@ using Domain.DTOs;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
+using Domain.VO;
 
 namespace AcessoWebApi.Infrastructure.Security
 {
@@ -65,12 +66,12 @@ namespace AcessoWebApi.Infrastructure.Security
             return new Guid(GetClaimsIdentity().FirstOrDefault(a => a.Type == "IdParceiro")?.Value);
         }
 
-        public MXMLoginDTO GetMXMLoginFromRequestBody()
+        public LoginVO GetMXMLoginFromRequestBody()
         {
             var req = GetRequest;
             //req.EnableRewind();
             req.EnableBuffering();
-            MXMLoginDTO mxmLogin = null;
+            LoginVO mxmLogin = null;
             using (var reader = new StreamReader(
                    req.Body,
                    encoding: Encoding.UTF8,
@@ -79,18 +80,20 @@ namespace AcessoWebApi.Infrastructure.Security
             {
                 var bodyString = reader.ReadToEndAsync().Result;
 
-                mxmLogin = JsonConvert.DeserializeObject<MXMLoginDTO>(bodyString);
+                var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
+                mxmLogin = baseDTO.Login;
             }
             req.Body.Position = 0;
 
             return mxmLogin;
         }
 
-        public MXMLoginDTO GetMXMLoginFromRequestHeaderBasic()
+        public LoginVO GetMXMLoginFromRequestHeaderBasic()
         {
             var req = GetRequest;
             string authHeader = req.Headers["Authorization"];
-            MXMLoginDTO mxmLogin = null;
+            string ambHeader = req.Headers["Ambiente"];
+            LoginVO mxmLogin = null;
 
             if (authHeader != null && authHeader.StartsWith("Basic"))
             {
@@ -102,6 +105,7 @@ namespace AcessoWebApi.Infrastructure.Security
 
                 mxmLogin.Usuario = usernamePassword.Substring(0, seperatorIndex);
                 mxmLogin.Senha = usernamePassword.Substring(seperatorIndex + 1);
+                mxmLogin.Ambiente = ambHeader;
             }
 
             return mxmLogin;
