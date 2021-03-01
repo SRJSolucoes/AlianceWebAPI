@@ -3,7 +3,8 @@
   "Version": "15.0.40203.910",
   "ExtendedData": {
     "inputs": [
-      "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/wsdl/IMXMWS_GestaoDeProcessos"
+      //"https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/wsdl/IMXMWS_GestaoDeProcessos"
+      "http://localhost:8088/IMXMWS_GestaoDeProcessosMOCK?WSDL"
     ],
     "collectionTypes": [
       "System.Array",

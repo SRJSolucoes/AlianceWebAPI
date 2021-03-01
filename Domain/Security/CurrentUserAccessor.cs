@@ -92,7 +92,7 @@ namespace AcessoWebApi.Infrastructure.Security
         {
             var req = GetRequest;
             string authHeader = req.Headers["Authorization"];
-            string ambHeader = req.Headers["Ambiente"];
+            string ambHeader = req.Headers["ServiceName"];
             LoginVO mxmLogin = null;
 
             if (authHeader != null && authHeader.StartsWith("Basic"))
@@ -105,7 +105,7 @@ namespace AcessoWebApi.Infrastructure.Security
 
                 mxmLogin.Usuario = usernamePassword.Substring(0, seperatorIndex);
                 mxmLogin.Senha = usernamePassword.Substring(seperatorIndex + 1);
-                mxmLogin.Ambiente = ambHeader;
+                mxmLogin.ServiceName = ambHeader;
             }
 
             return mxmLogin;

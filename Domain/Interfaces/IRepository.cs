@@ -17,6 +17,7 @@ namespace Domain.Interfaces
         Task<IEnumerable<T>> GetInatives();
         Task<IEnumerable<T>> SelectAsync();
         IQueryable<T> QuerySelect();
+        IList<T> ExecuteQuerySelect(string queryStatement);
         Task<bool> ExistsAsync(Guid id);
     }
 }

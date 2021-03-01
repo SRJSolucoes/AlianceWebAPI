@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Entidades
 {
-    public class ITRequisicao : EntidadeBase
+    public class ItemRequisicao : EntidadeBase
     {
         public virtual int Id { get; set; }
         public virtual String ReqNumero { get; set; }

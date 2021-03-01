@@ -12,7 +12,7 @@ namespace Cross.Cutting.DependencyInjection
     { 
         public static void ConfigureDependenceInjection(IServiceCollection serviceCollection) 
         {
-            serviceCollection.AddTransient<IShoopingService, ShoopingService>();
+            serviceCollection.AddTransient<IShoppingService, ShoopingService>();
 
 
             serviceCollection.AddTransient<IHttpContextAccessor, HttpContextAccessor>(); 

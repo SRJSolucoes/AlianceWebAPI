@@ -34,13 +34,21 @@ namespace Data.Repository
             var userFromBody = currentUserAccessor.GetMXMLoginFromRequestBody();
             if (userFromBody != null)
             {
-                sessaoCustomizada = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha).OpenSession();
+                var sessionFact = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha, userFromBody.ServiceName);
+                if (sessionFact != null)
+                {
+                    sessaoCustomizada = sessionFact.OpenSession();
+                }
             }
 
             var userFromHeader = currentUserAccessor.GetMXMLoginFromRequestHeaderBasic();
             if (userFromHeader != null)
             {
-                sessaoCustomizada = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha).OpenSession();
+                var sessionFact = SessionFact.GetSessionFact(userFromHeader.Usuario, userFromHeader.Senha, userFromHeader.ServiceName);
+                if (sessionFact != null)
+                {
+                    sessaoCustomizada = sessionFact.OpenSession();
+                }
             }
 
             var sessaoAtual = sessaoDefault;
@@ -240,6 +248,22 @@ namespace Data.Repository
             try
             {
                 return _session.Query<T>();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IList<T> ExecuteQuerySelect(string queryStatement)
+        {
+            try
+            {
+                var query = _session.CreateSQLQuery(queryStatement).AddEntity(typeof(T));
+
+                var list = query.List<T>();
+
+                return list;
             }
             catch (Exception ex)
             {

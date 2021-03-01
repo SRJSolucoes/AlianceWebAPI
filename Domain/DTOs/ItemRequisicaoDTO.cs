@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.DTOs
 {
-    public class ITRequisicaoDTO
+    public class ItemRequisicaoDTO
     {
         public int Id { get; set; }
         public String ReqNumero { get; set; }

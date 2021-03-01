@@ -14,17 +14,22 @@ namespace Data.FluentySession
         private static IFluentySessionFactory frameworkSessionFactoryInput;
         private static IFluentySessionFactory frameworkSessionFactoryOutPut;
 
-        public static string getOracleConnectionString(string usuario, string senha)
+        public static ISessionFactory GetSessionFact(string usuario, string senha, string serviceName = null, string host = null, string port = null)
         {
-            return "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=" + usuario + ";Password=" + senha + ";";
-        }
-        public static ISessionFactory GetSessionFact(string usuario, string senha)
-        {
-
-            var connectionStringOracle = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=" + usuario + ";Password=" + senha + ";";
+            string connectionStringOracle = getOracleConnectionString(usuario, senha, serviceName, host, port);
             frameworkSessionFactoryUserPas = new FluentySessionFactory<RequisicaoMap>(connectionStringOracle, "oracle");
 
             return frameworkSessionFactoryUserPas.CreateSessionFactory();
+        }
+
+        private static string getOracleConnectionString(string usuario, string senha, string serviceName, string host, string port)
+        {
+            var hostName = String.IsNullOrWhiteSpace(host) ? "10.0.100.23" : host;
+            var hostPort = String.IsNullOrWhiteSpace(port) ? "1521" : port;
+            var hostServiceName = String.IsNullOrWhiteSpace(serviceName) ? "HOM" : serviceName;
+
+            var connectionStringOracle = $@"Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = {hostName})(PORT = {hostPort})))(CONNECT_DATA =(SERVICE_NAME = {hostServiceName})));User Id={usuario};Password={senha};";
+            return connectionStringOracle;
         }
 
         public static ISessionFactory GetSessionFact()

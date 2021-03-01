@@ -9,184 +9,184 @@
 
 namespace MXMWS_GestaoDeProcessos
 {
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos")]
     public interface IMXMWS_GestaoDeProcessos
     {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoPro" +
-            "cessaIntegracao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoPro" +
+            "cessaIntegracao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoResponse> RequisicaoAntecipacaoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoPro" +
-            "cessaExclusao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoPro" +
+            "cessaExclusao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoResponse> RequisicaoAntecipacaoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoObt" +
-            "erRegistro", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoObt" +
+            "erRegistro", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroResponse> RequisicaoAntecipacaoObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoObt" +
-            "erRegistroPorNumeroRequisicao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoObt" +
+            "erRegistroPorNumeroRequisicao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse> RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoMon" +
-            "tarContabilizacao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoAntecipacaoMon" +
+            "tarContabilizacao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoResponse> RequisicaoAntecipacaoMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
-            "ssaIntegracao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
+            "ssaIntegracao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoResponse> RequisicaoPagamentoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
-            "ssaExclusao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
+            "ssaExclusao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoResponse> RequisicaoPagamentoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObter" +
-            "Registro", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObter" +
+            "Registro", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroResponse> RequisicaoPagamentoObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObter" +
-            "RegistroPeloNumeroRequisicao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObter" +
+            "RegistroPeloNumeroRequisicao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse> RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
-            "laImposto", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
+            "laImposto", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoResponse> RequisicaoPagamentoCalculaImpostoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
-            "laAntecipacao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
+            "laAntecipacao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoResponse> RequisicaoPagamentoCalculaAntecipacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
-            "laDataVencimento", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
+            "laDataVencimento", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoResponse> RequisicaoPagamentoCalculaDataVencimentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
-            "laDataProgramacaoPagamento", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoCalcu" +
+            "laDataProgramacaoPagamento", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse> RequisicaoPagamentoCalculaDataProgramacaoPagamentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
-            "ParcelaTitulo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
+            "ParcelaTitulo", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloResponse> RequisicaoPagamentoMontaParcelaTituloAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
-            "ssaRegistroEspecifico", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoProce" +
+            "ssaRegistroEspecifico", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoResponse> RequisicaoPagamentoProcessaRegistroEspecificoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
-            "Contabilizacao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
+            "Contabilizacao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoResponse> RequisicaoPagamentoMontaContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoRetor" +
-            "naVAlorAntecipcacao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoRetor" +
+            "naVAlorAntecipcacao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse> RequisicaoPagamentoRetornaVAlorAntecipcacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoValor" +
-            "esCondicaoPagamento", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoValor" +
+            "esCondicaoPagamento", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoResponse> RequisicaoPagamentoValoresCondicaoPagamentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
-            "Reinf", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoMonta" +
+            "Reinf", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfResponse> RequisicaoPagamentoMontaReinfAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaProc" +
-            "essaIntegracao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaProc" +
+            "essaIntegracao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoResponse> RequisicaoTesourariaProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaProc" +
-            "essaExclusao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaProc" +
+            "essaExclusao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoResponse> RequisicaoTesourariaProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaObte" +
-            "rRegistro", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaObte" +
+            "rRegistro", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroResponse> RequisicaoTesourariaObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaMont" +
-            "arContabilizacao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoTesourariaMont" +
+            "arContabilizacao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoResponse> RequisicaoTesourariaMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegr" +
-            "acao", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegr" +
+            "acao", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoResponse> AprovacoesProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesObterRegisto", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesObterRegisto", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterRegistoResponse> AprovacoesObterRegistoAsync(MXMWS_GestaoDeProcessos.AprovacoesObterRegistoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesObterAprovacoe" +
-            "s", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesObterAprovacoe" +
+            "s", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesResponse> AprovacoesObterAprovacoesAsync(MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObteA" +
-            "nexo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoObteA" +
+            "nexo", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoResponse> RequisicaoPagamentoObteAnexoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoExclu" +
-            "iAnexo", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+
+        [System.ServiceModel.OperationContractAttribute(Action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#RequisicaoPagamentoExclu" +
+            "iAnexo", ReplyAction = "*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(Style = System.ServiceModel.OperationFormatStyle.Document, SupportFaults = true, Use = System.ServiceModel.OperationFormatUse.Literal)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoResponse> RequisicaoPagamentoExcluiAnexoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoRequest request);
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:MXMInvokable")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace = "urn:MXMInvokable")]
     public partial class TUserProcessToken
     {
-        
+
         private string userField;
-        
+
         private string pwField;
-        
+
         private string tokenField;
-        
+
         private string ambField;
-        
+
         private string multiAmbienteField;
-        
+
         private int iDProcessField;
-        
+
         private string pathTempField;
-        
+
         private string idiomaField;
-        
+
         private bool enableMonitoringField;
-        
+
         private string pathTempLogField;
-        
+
         private string alteraSecaoField;
-        
+
         private string conectaComADField;
-        
+
         /// <remarks/>
         public string User
         {
@@ -199,7 +199,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.userField = value;
             }
         }
-        
+
         /// <remarks/>
         public string Pw
         {
@@ -212,7 +212,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.pwField = value;
             }
         }
-        
+
         /// <remarks/>
         public string Token
         {
@@ -225,7 +225,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.tokenField = value;
             }
         }
-        
+
         /// <remarks/>
         public string Amb
         {
@@ -238,7 +238,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.ambField = value;
             }
         }
-        
+
         /// <remarks/>
         public string MultiAmbiente
         {
@@ -251,7 +251,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.multiAmbienteField = value;
             }
         }
-        
+
         /// <remarks/>
         public int IDProcess
         {
@@ -264,7 +264,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.iDProcessField = value;
             }
         }
-        
+
         /// <remarks/>
         public string PathTemp
         {
@@ -277,7 +277,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.pathTempField = value;
             }
         }
-        
+
         /// <remarks/>
         public string Idioma
         {
@@ -290,7 +290,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.idiomaField = value;
             }
         }
-        
+
         /// <remarks/>
         public bool EnableMonitoring
         {
@@ -303,7 +303,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.enableMonitoringField = value;
             }
         }
-        
+
         /// <remarks/>
         public string PathTempLog
         {
@@ -316,7 +316,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.pathTempLogField = value;
             }
         }
-        
+
         /// <remarks/>
         public string AlteraSecao
         {
@@ -329,7 +329,7 @@ namespace MXMWS_GestaoDeProcessos
                 this.alteraSecaoField = value;
             }
         }
-        
+
         /// <remarks/>
         public string ConectaComAD
         {
@@ -343,123 +343,123 @@ namespace MXMWS_GestaoDeProcessos
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoProcessaIntegracao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoProcessaIntegracao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoProcessaIntegracaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoAntecipacaoProcessaIntegracaoRequest()
         {
         }
-        
+
         public RequisicaoAntecipacaoProcessaIntegracaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoProcessaIntegracaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoProcessaIntegracaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoProcessaIntegracaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoAntecipacaoProcessaIntegracaoResponse()
         {
         }
-        
+
         public RequisicaoAntecipacaoProcessaIntegracaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoProcessaExclusao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoProcessaExclusao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoProcessaExclusaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AACP_NumREQ;
-        
+
         public RequisicaoAntecipacaoProcessaExclusaoRequest()
         {
         }
-        
+
         public RequisicaoAntecipacaoProcessaExclusaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AACP_NumREQ = AACP_NumREQ;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoProcessaExclusaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoProcessaExclusaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoProcessaExclusaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoAntecipacaoProcessaExclusaoResponse()
         {
         }
-        
+
         public RequisicaoAntecipacaoProcessaExclusaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoObterRegistro", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoObterRegistro", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoObterRegistroRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AACP_CDFor;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public string AACP_DOCAntec;
-        
+
         public RequisicaoAntecipacaoObterRegistroRequest()
         {
         }
-        
+
         public RequisicaoAntecipacaoObterRegistroRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_CDFor, string AACP_DOCAntec)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -467,243 +467,243 @@ namespace MXMWS_GestaoDeProcessos
             this.AACP_DOCAntec = AACP_DOCAntec;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoObterRegistroResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoObterRegistroResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoObterRegistroResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoAntecipacaoObterRegistroResponse()
         {
         }
-        
+
         public RequisicaoAntecipacaoObterRegistroResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoObterRegistroPorNumeroRequisicao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoObterRegistroPorNumeroRequisicao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AACP_NumREQ;
-        
+
         public RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest()
         {
         }
-        
+
         public RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AACP_NumREQ = AACP_NumREQ;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse()
         {
         }
-        
+
         public RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoMontarContabilizacao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoMontarContabilizacao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoMontarContabilizacaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoAntecipacaoMontarContabilizacaoRequest()
         {
         }
-        
+
         public RequisicaoAntecipacaoMontarContabilizacaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoAntecipacaoMontarContabilizacaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoAntecipacaoMontarContabilizacaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoAntecipacaoMontarContabilizacaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoAntecipacaoMontarContabilizacaoResponse()
         {
         }
-        
+
         public RequisicaoAntecipacaoMontarContabilizacaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaIntegracao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaIntegracao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaIntegracaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoProcessaIntegracaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaIntegracaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaIntegracaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaIntegracaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaIntegracaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoProcessaIntegracaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaIntegracaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaExclusao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaExclusao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaExclusaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AACP_NumREQ;
-        
+
         public RequisicaoPagamentoProcessaExclusaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaExclusaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AACP_NumREQ = AACP_NumREQ;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaExclusaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaExclusaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaExclusaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoProcessaExclusaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaExclusaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObterRegistro", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObterRegistro", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObterRegistroRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string ATCP_CDFor;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public string ATCP_NOTitulo;
-        
+
         public RequisicaoPagamentoObterRegistroRequest()
         {
         }
-        
+
         public RequisicaoPagamentoObterRegistroRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ATCP_CDFor, string ATCP_NOTitulo)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -711,339 +711,339 @@ namespace MXMWS_GestaoDeProcessos
             this.ATCP_NOTitulo = ATCP_NOTitulo;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObterRegistroResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObterRegistroResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObterRegistroResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoObterRegistroResponse()
         {
         }
-        
+
         public RequisicaoPagamentoObterRegistroResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObterRegistroPeloNumeroRequisicao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObterRegistroPeloNumeroRequisicao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AACP_NumREQ;
-        
+
         public RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AACP_NumREQ = AACP_NumREQ;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaImposto", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaImposto", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaImpostoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoCalculaImpostoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaImpostoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaImpostoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaImpostoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaImpostoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoCalculaImpostoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaImpostoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaAntecipacao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaAntecipacao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaAntecipacaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoCalculaAntecipacaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaAntecipacaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaAntecipacaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaAntecipacaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaAntecipacaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoCalculaAntecipacaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaAntecipacaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaDataVencimento", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaDataVencimento", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaDataVencimentoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoCalculaDataVencimentoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaDataVencimentoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaDataVencimentoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaDataVencimentoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaDataVencimentoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoCalculaDataVencimentoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaDataVencimentoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaDataProgramacaoPagamento", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaDataProgramacaoPagamento", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaParcelaTitulo", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaParcelaTitulo", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaParcelaTituloRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoMontaParcelaTituloRequest()
         {
         }
-        
+
         public RequisicaoPagamentoMontaParcelaTituloRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaParcelaTituloResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaParcelaTituloResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaParcelaTituloResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoMontaParcelaTituloResponse()
         {
         }
-        
+
         public RequisicaoPagamentoMontaParcelaTituloResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaRegistroEspecifico", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaRegistroEspecifico", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaRegistroEspecificoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public string AXMLParcelas;
-        
+
         public RequisicaoPagamentoProcessaRegistroEspecificoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaRegistroEspecificoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, string AXMLParcelas)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1051,51 +1051,51 @@ namespace MXMWS_GestaoDeProcessos
             this.AXMLParcelas = AXMLParcelas;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoProcessaRegistroEspecificoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoProcessaRegistroEspecificoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoProcessaRegistroEspecificoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoProcessaRegistroEspecificoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoProcessaRegistroEspecificoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaContabilizacao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaContabilizacao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaContabilizacaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public bool AConsultar;
-        
+
         public RequisicaoPagamentoMontaContabilizacaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoMontaContabilizacaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, bool AConsultar)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1103,66 +1103,66 @@ namespace MXMWS_GestaoDeProcessos
             this.AConsultar = AConsultar;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaContabilizacaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaContabilizacaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaContabilizacaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoMontaContabilizacaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoMontaContabilizacaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoRetornaVAlorAntecipcacao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoRetornaVAlorAntecipcacao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string ACDFornecedor;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public string ACDEmpresa;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 2)]
         public string ACDFilial;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 3)]
         public string AMoeda;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=4)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 4)]
         public string ANOTitulo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=5)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 5)]
         public string AData;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=6)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 6)]
         public double AValorTitulo;
-        
+
         public RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ACDFornecedor, string ACDEmpresa, string ACDFilial, string AMoeda, string ANOTitulo, string AData, double AValorTitulo)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1175,99 +1175,99 @@ namespace MXMWS_GestaoDeProcessos
             this.AValorTitulo = AValorTitulo;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public double @return;
-        
+
         public RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, double @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoValoresCondicaoPagamento", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoValoresCondicaoPagamento", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoValoresCondicaoPagamentoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoPagamentoValoresCondicaoPagamentoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoValoresCondicaoPagamentoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoValoresCondicaoPagamentoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoValoresCondicaoPagamentoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoValoresCondicaoPagamentoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoValoresCondicaoPagamentoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoValoresCondicaoPagamentoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaReinf", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaReinf", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaReinfRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public bool AConsultar;
-        
+
         public RequisicaoPagamentoMontaReinfRequest()
         {
         }
-        
+
         public RequisicaoPagamentoMontaReinfRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, bool AConsultar)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1275,387 +1275,387 @@ namespace MXMWS_GestaoDeProcessos
             this.AConsultar = AConsultar;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoMontaReinfResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoMontaReinfResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoMontaReinfResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoMontaReinfResponse()
         {
         }
-        
+
         public RequisicaoPagamentoMontaReinfResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaProcessaIntegracao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaProcessaIntegracao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaProcessaIntegracaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoTesourariaProcessaIntegracaoRequest()
         {
         }
-        
+
         public RequisicaoTesourariaProcessaIntegracaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaProcessaIntegracaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaProcessaIntegracaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaProcessaIntegracaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoTesourariaProcessaIntegracaoResponse()
         {
         }
-        
+
         public RequisicaoTesourariaProcessaIntegracaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaProcessaExclusao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaProcessaExclusao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaProcessaExclusaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string ARCONumero;
-        
+
         public RequisicaoTesourariaProcessaExclusaoRequest()
         {
         }
-        
+
         public RequisicaoTesourariaProcessaExclusaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ARCONumero)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.ARCONumero = ARCONumero;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaProcessaExclusaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaProcessaExclusaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaProcessaExclusaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoTesourariaProcessaExclusaoResponse()
         {
         }
-        
+
         public RequisicaoTesourariaProcessaExclusaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaObterRegistro", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaObterRegistro", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaObterRegistroRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string ARCONumero;
-        
+
         public RequisicaoTesourariaObterRegistroRequest()
         {
         }
-        
+
         public RequisicaoTesourariaObterRegistroRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ARCONumero)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.ARCONumero = ARCONumero;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaObterRegistroResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaObterRegistroResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaObterRegistroResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoTesourariaObterRegistroResponse()
         {
         }
-        
+
         public RequisicaoTesourariaObterRegistroResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaMontarContabilizacao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaMontarContabilizacao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaMontarContabilizacaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public RequisicaoTesourariaMontarContabilizacaoRequest()
         {
         }
-        
+
         public RequisicaoTesourariaMontarContabilizacaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoTesourariaMontarContabilizacaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoTesourariaMontarContabilizacaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoTesourariaMontarContabilizacaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoTesourariaMontarContabilizacaoResponse()
         {
         }
-        
+
         public RequisicaoTesourariaMontarContabilizacaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesProcessaIntegracao", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesProcessaIntegracao", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesProcessaIntegracaoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AXML;
-        
+
         public AprovacoesProcessaIntegracaoRequest()
         {
         }
-        
+
         public AprovacoesProcessaIntegracaoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.AXML = AXML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesProcessaIntegracaoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesProcessaIntegracaoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesProcessaIntegracaoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public AprovacoesProcessaIntegracaoResponse()
         {
         }
-        
+
         public AprovacoesProcessaIntegracaoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesObterRegisto", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesObterRegisto", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesObterRegistoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string ACDUsuario;
-        
+
         public AprovacoesObterRegistoRequest()
         {
         }
-        
+
         public AprovacoesObterRegistoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ACDUsuario)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.ACDUsuario = ACDUsuario;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesObterRegistoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesObterRegistoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesObterRegistoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public AprovacoesObterRegistoResponse()
         {
         }
-        
+
         public AprovacoesObterRegistoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesObterAprovacoes", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesObterAprovacoes", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesObterAprovacoesRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public int ALAA_SqAprovacao;
-        
+
         public AprovacoesObterAprovacoesRequest()
         {
         }
-        
+
         public AprovacoesObterAprovacoesRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, int ALAA_SqAprovacao)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.ALAA_SqAprovacao = ALAA_SqAprovacao;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="AprovacoesObterAprovacoesResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "AprovacoesObterAprovacoesResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class AprovacoesObterAprovacoesResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public AprovacoesObterAprovacoesResponse()
         {
         }
-        
+
         public AprovacoesObterAprovacoesResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObteAnexo", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObteAnexo", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObteAnexoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AARC_Numero;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public int AARC_Codigo;
-        
+
         public RequisicaoPagamentoObteAnexoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoObteAnexoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AARC_Numero, int AARC_Codigo)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1663,51 +1663,51 @@ namespace MXMWS_GestaoDeProcessos
             this.AARC_Codigo = AARC_Codigo;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoObteAnexoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoObteAnexoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoObteAnexoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoObteAnexoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoObteAnexoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoExcluiAnexo", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoExcluiAnexo", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoExcluiAnexoRequest
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string AARC_Numero;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 1)]
         public int AARC_Codigo;
-        
+
         public RequisicaoPagamentoExcluiAnexoRequest()
         {
         }
-        
+
         public RequisicaoPagamentoExcluiAnexoRequest(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AARC_Numero, int AARC_Codigo)
         {
             this.TUserProcessToken = TUserProcessToken;
@@ -1715,87 +1715,87 @@ namespace MXMWS_GestaoDeProcessos
             this.AARC_Codigo = AARC_Codigo;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="RequisicaoPagamentoExcluiAnexoResponse", WrapperNamespace="urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped=true)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName = "RequisicaoPagamentoExcluiAnexoResponse", WrapperNamespace = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos", IsWrapped = true)]
     public partial class RequisicaoPagamentoExcluiAnexoResponse
     {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="")]
+
+        [System.ServiceModel.MessageHeaderAttribute(Namespace = "")]
         public MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace = "", Order = 0)]
         public string @return;
-        
+
         public RequisicaoPagamentoExcluiAnexoResponse()
         {
         }
-        
+
         public RequisicaoPagamentoExcluiAnexoResponse(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string @return)
         {
             this.TUserProcessToken = TUserProcessToken;
             this.@return = @return;
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     public interface IMXMWS_GestaoDeProcessosChannel : MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos, System.ServiceModel.IClientChannel
     {
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     public partial class MXMWS_GestaoDeProcessosClient : System.ServiceModel.ClientBase<MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos>, MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos
     {
-        
+
         /// <summary>
         /// Implemente este método parcial para configurar o ponto de extremidade de serviço.
         /// </summary>
         /// <param name="serviceEndpoint">O ponto de extremidade a ser configurado</param>
         /// <param name="clientCredentials">As credenciais do cliente</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
-        
-        public MXMWS_GestaoDeProcessosClient() : 
+
+        public MXMWS_GestaoDeProcessosClient() :
                 base(MXMWS_GestaoDeProcessosClient.GetDefaultBinding(), MXMWS_GestaoDeProcessosClient.GetDefaultEndpointAddress())
         {
             this.Endpoint.Name = EndpointConfiguration.IMXMWS_GestaoDeProcessosPort.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration) : 
+
+        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration) :
                 base(MXMWS_GestaoDeProcessosClient.GetBindingForEndpoint(endpointConfiguration), MXMWS_GestaoDeProcessosClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+
+        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration, string remoteAddress) :
                 base(MXMWS_GestaoDeProcessosClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public MXMWS_GestaoDeProcessosClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(MXMWS_GestaoDeProcessosClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
-        
-        public MXMWS_GestaoDeProcessosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+        public MXMWS_GestaoDeProcessosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
                 base(binding, remoteAddress)
         {
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoRequest request)
         {
             return base.Channel.RequisicaoAntecipacaoProcessaIntegracaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoResponse> RequisicaoAntecipacaoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaIntegracaoRequest();
@@ -1803,13 +1803,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoAntecipacaoProcessaIntegracaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoRequest request)
         {
             return base.Channel.RequisicaoAntecipacaoProcessaExclusaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoResponse> RequisicaoAntecipacaoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoProcessaExclusaoRequest();
@@ -1817,13 +1817,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AACP_NumREQ = AACP_NumREQ;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoAntecipacaoProcessaExclusaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroRequest request)
         {
             return base.Channel.RequisicaoAntecipacaoObterRegistroAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroResponse> RequisicaoAntecipacaoObterRegistroAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_CDFor, string AACP_DOCAntec)
         {
             MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroRequest();
@@ -1832,13 +1832,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AACP_DOCAntec = AACP_DOCAntec;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoAntecipacaoObterRegistroAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest request)
         {
             return base.Channel.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoResponse> RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoRequest();
@@ -1846,13 +1846,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AACP_NumREQ = AACP_NumREQ;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoAntecipacaoObterRegistroPorNumeroRequisicaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoRequest request)
         {
             return base.Channel.RequisicaoAntecipacaoMontarContabilizacaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoResponse> RequisicaoAntecipacaoMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoAntecipacaoMontarContabilizacaoRequest();
@@ -1860,13 +1860,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoAntecipacaoMontarContabilizacaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoProcessaIntegracaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoResponse> RequisicaoPagamentoProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaIntegracaoRequest();
@@ -1874,13 +1874,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoProcessaIntegracaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoProcessaExclusaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoResponse> RequisicaoPagamentoProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaExclusaoRequest();
@@ -1888,13 +1888,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AACP_NumREQ = AACP_NumREQ;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoProcessaExclusaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroRequest request)
         {
             return base.Channel.RequisicaoPagamentoObterRegistroAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroResponse> RequisicaoPagamentoObterRegistroAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ATCP_CDFor, string ATCP_NOTitulo)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroRequest();
@@ -1903,13 +1903,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.ATCP_NOTitulo = ATCP_NOTitulo;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoObterRegistroAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoResponse> RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AACP_NumREQ)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoRequest();
@@ -1917,13 +1917,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AACP_NumREQ = AACP_NumREQ;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoObterRegistroPeloNumeroRequisicaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoRequest request)
         {
             return base.Channel.RequisicaoPagamentoCalculaImpostoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoResponse> RequisicaoPagamentoCalculaImpostoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaImpostoRequest();
@@ -1931,13 +1931,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoCalculaImpostoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoCalculaAntecipacaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoResponse> RequisicaoPagamentoCalculaAntecipacaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaAntecipacaoRequest();
@@ -1945,13 +1945,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoCalculaAntecipacaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoRequest request)
         {
             return base.Channel.RequisicaoPagamentoCalculaDataVencimentoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoResponse> RequisicaoPagamentoCalculaDataVencimentoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataVencimentoRequest();
@@ -1959,13 +1959,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoCalculaDataVencimentoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest request)
         {
             return base.Channel.RequisicaoPagamentoCalculaDataProgramacaoPagamentoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoResponse> RequisicaoPagamentoCalculaDataProgramacaoPagamentoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoCalculaDataProgramacaoPagamentoRequest();
@@ -1973,13 +1973,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoCalculaDataProgramacaoPagamentoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloRequest request)
         {
             return base.Channel.RequisicaoPagamentoMontaParcelaTituloAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloResponse> RequisicaoPagamentoMontaParcelaTituloAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaParcelaTituloRequest();
@@ -1987,13 +1987,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoMontaParcelaTituloAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoRequest request)
         {
             return base.Channel.RequisicaoPagamentoProcessaRegistroEspecificoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoResponse> RequisicaoPagamentoProcessaRegistroEspecificoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, string AXMLParcelas)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoProcessaRegistroEspecificoRequest();
@@ -2002,13 +2002,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXMLParcelas = AXMLParcelas;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoProcessaRegistroEspecificoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoMontaContabilizacaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoResponse> RequisicaoPagamentoMontaContabilizacaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, bool AConsultar)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaContabilizacaoRequest();
@@ -2017,13 +2017,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AConsultar = AConsultar;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoMontaContabilizacaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest request)
         {
             return base.Channel.RequisicaoPagamentoRetornaVAlorAntecipcacaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoResponse> RequisicaoPagamentoRetornaVAlorAntecipcacaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ACDFornecedor, string ACDEmpresa, string ACDFilial, string AMoeda, string ANOTitulo, string AData, double AValorTitulo)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoRetornaVAlorAntecipcacaoRequest();
@@ -2037,13 +2037,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AValorTitulo = AValorTitulo;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoRetornaVAlorAntecipcacaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoRequest request)
         {
             return base.Channel.RequisicaoPagamentoValoresCondicaoPagamentoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoResponse> RequisicaoPagamentoValoresCondicaoPagamentoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoValoresCondicaoPagamentoRequest();
@@ -2051,13 +2051,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoValoresCondicaoPagamentoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfRequest request)
         {
             return base.Channel.RequisicaoPagamentoMontaReinfAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfResponse> RequisicaoPagamentoMontaReinfAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML, bool AConsultar)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoMontaReinfRequest();
@@ -2066,13 +2066,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AConsultar = AConsultar;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoMontaReinfAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoRequest request)
         {
             return base.Channel.RequisicaoTesourariaProcessaIntegracaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoResponse> RequisicaoTesourariaProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaIntegracaoRequest();
@@ -2080,13 +2080,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoTesourariaProcessaIntegracaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoRequest request)
         {
             return base.Channel.RequisicaoTesourariaProcessaExclusaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoResponse> RequisicaoTesourariaProcessaExclusaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ARCONumero)
         {
             MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoTesourariaProcessaExclusaoRequest();
@@ -2094,13 +2094,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.ARCONumero = ARCONumero;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoTesourariaProcessaExclusaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroRequest request)
         {
             return base.Channel.RequisicaoTesourariaObterRegistroAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroResponse> RequisicaoTesourariaObterRegistroAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ARCONumero)
         {
             MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoTesourariaObterRegistroRequest();
@@ -2108,13 +2108,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.ARCONumero = ARCONumero;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoTesourariaObterRegistroAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoRequest request)
         {
             return base.Channel.RequisicaoTesourariaMontarContabilizacaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoResponse> RequisicaoTesourariaMontarContabilizacaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoTesourariaMontarContabilizacaoRequest();
@@ -2122,13 +2122,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoTesourariaMontarContabilizacaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoRequest request)
         {
             return base.Channel.AprovacoesProcessaIntegracaoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoResponse> AprovacoesProcessaIntegracaoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AXML)
         {
             MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoRequest inValue = new MXMWS_GestaoDeProcessos.AprovacoesProcessaIntegracaoRequest();
@@ -2136,13 +2136,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AXML = AXML;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).AprovacoesProcessaIntegracaoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterRegistoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.AprovacoesObterRegistoAsync(MXMWS_GestaoDeProcessos.AprovacoesObterRegistoRequest request)
         {
             return base.Channel.AprovacoesObterRegistoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterRegistoResponse> AprovacoesObterRegistoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string ACDUsuario)
         {
             MXMWS_GestaoDeProcessos.AprovacoesObterRegistoRequest inValue = new MXMWS_GestaoDeProcessos.AprovacoesObterRegistoRequest();
@@ -2150,13 +2150,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.ACDUsuario = ACDUsuario;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).AprovacoesObterRegistoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesAsync(MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesRequest request)
         {
             return base.Channel.AprovacoesObterAprovacoesAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesResponse> AprovacoesObterAprovacoesAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, int ALAA_SqAprovacao)
         {
             MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesRequest inValue = new MXMWS_GestaoDeProcessos.AprovacoesObterAprovacoesRequest();
@@ -2164,13 +2164,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.ALAA_SqAprovacao = ALAA_SqAprovacao;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).AprovacoesObterAprovacoesAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoRequest request)
         {
             return base.Channel.RequisicaoPagamentoObteAnexoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoResponse> RequisicaoPagamentoObteAnexoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AARC_Numero, int AARC_Codigo)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoObteAnexoRequest();
@@ -2179,13 +2179,13 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AARC_Codigo = AARC_Codigo;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoObteAnexoAsync(inValue);
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoResponse> MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoAsync(MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoRequest request)
         {
             return base.Channel.RequisicaoPagamentoExcluiAnexoAsync(request);
         }
-        
+
         public System.Threading.Tasks.Task<MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoResponse> RequisicaoPagamentoExcluiAnexoAsync(MXMWS_GestaoDeProcessos.TUserProcessToken TUserProcessToken, string AARC_Numero, int AARC_Codigo)
         {
             MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoRequest inValue = new MXMWS_GestaoDeProcessos.RequisicaoPagamentoExcluiAnexoRequest();
@@ -2194,17 +2194,17 @@ namespace MXMWS_GestaoDeProcessos
             inValue.AARC_Codigo = AARC_Codigo;
             return ((MXMWS_GestaoDeProcessos.IMXMWS_GestaoDeProcessos)(this)).RequisicaoPagamentoExcluiAnexoAsync(inValue);
         }
-        
+
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
         }
-        
+
         public virtual System.Threading.Tasks.Task CloseAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
         }
-        
+
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
             if ((endpointConfiguration == EndpointConfiguration.IMXMWS_GestaoDeProcessosPort))
@@ -2219,30 +2219,30 @@ namespace MXMWS_GestaoDeProcessos
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }
-        
+
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
             if ((endpointConfiguration == EndpointConfiguration.IMXMWS_GestaoDeProcessosPort))
             {
-                return new System.ServiceModel.EndpointAddress("https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_Gest" +
-                        "aoDeProcessos");
+                //return new System.ServiceModel.EndpointAddress("https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos");
+                return new System.ServiceModel.EndpointAddress("http://localhost:8088/IMXMWS_GestaoDeProcessosMOCK");
             }
             throw new System.InvalidOperationException(string.Format("Não foi possível encontrar o ponto de extremidade com o nome \'{0}\'.", endpointConfiguration));
         }
-        
+
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
             return MXMWS_GestaoDeProcessosClient.GetBindingForEndpoint(EndpointConfiguration.IMXMWS_GestaoDeProcessosPort);
         }
-        
+
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
             return MXMWS_GestaoDeProcessosClient.GetEndpointAddress(EndpointConfiguration.IMXMWS_GestaoDeProcessosPort);
         }
-        
+
         public enum EndpointConfiguration
         {
-            
+
             IMXMWS_GestaoDeProcessosPort,
         }
     }

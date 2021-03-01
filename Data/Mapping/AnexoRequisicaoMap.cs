@@ -10,16 +10,16 @@ namespace Data.Mapping
     {
         public AnexoRequisicaoMap()
         {
-            Table("E_ANEXOREQAPROVAPI_VIEW");
+            Table("ANEXOREQCOMPRA_ARC");
 
-            Id(x => x.Id).Column("ID").Not.Nullable();
-            Map(x => x.ReqNumero).Column("REQNUMERO").Not.Nullable();
-            Map(x => x.Codigo).Column("CODIGO");
-            Map(x => x.Anexo).Column("ANEXO");
-            Map(x => x.FileName).Column("FILENAME");
-            Map(x => x.UsuInclusao).Column("USUINCLUSAO");
-            Map(x => x.Nome).Column("NOME");
-            Map(x => x.DTInclusao).Column("DTINCLUSAO");
+            //Id(x => x.Id).Column("ID").Not.Nullable();
+            Id(x => x.ReqNumero).Column("ARC_NUMERO").Not.Nullable();
+            Map(x => x.Codigo).Column("ARC_CODIGO");
+            Map(x => x.Anexo).Column("ARC_ANEXO");
+            Map(x => x.FileName).Column("ARC_FILENAME");
+            //Map(x => x.UsuInclusao).Column("USUINCLUSAO");
+            //Map(x => x.Nome).Column("NOME");
+            //Map(x => x.DTInclusao).Column("DTINCLUSAO");
         }
     }
 }

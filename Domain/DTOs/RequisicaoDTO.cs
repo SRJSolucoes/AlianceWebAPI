@@ -17,12 +17,12 @@ namespace Domain.DTOs
         public String Setor { get; set; }
         public String Requisitante { get; set; }
         public String Posicao_Funcional { get; set; }
-        public String DS_Posicao_Funcional { get; set; }
+        public String DSPosicao_Funcional { get; set; }
         public String Observacao { get; set; }
         public DateTime DataMov { get; set; }
         public String Etape { get; set; }
         public String Tpoper { get; set; }
-        public String VBReqcompra { get; set; }
+        public String Reqcompra { get; set; }
         public String Usuario { get; set; }
         public String Ordem { get; set; }
         public String Justificativa { get; set; }

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >
+  <xs:element name="WebServiceReturn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Atributos"/>
+        <xs:element ref="ErroMSGs"/>
+        <xs:element ref="Registros"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Atributos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Atributo">
+          <xs:annotation>
+            <xs:documentation>Lista de atributos</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Atributo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wsraNome" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Nome do atributo</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="wsraValor" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Valor do atributo</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wsraNome" type="xs:string"/>
+  <xs:element name="wsraValor" type="xs:string"/>
+  <xs:element name="Registros">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Registro">
+          <xs:annotation>
+            <xs:documentation>Lista de erros</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Registro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wsrrSequencial" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Sequencial do registro</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="wsrrTipo" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Tipo do registro</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="Campos"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wsrrSequencial" type="xs:integer"/>
+  <xs:element name="wsrrTipo" type="xs:string"/>
+  <xs:element name="Campos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Campo">
+          <xs:annotation>
+            <xs:documentation>Campo Service</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Campo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wsrcNome" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Nome do campo</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="wsrcValor" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Valor do campo</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="wsrcNome" type="xs:string"/>
+  <xs:element name="wsrcValor" type="xs:string"/>
+  <xs:element name="ErroMSGs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ErroMSG">
+          <xs:annotation>
+            <xs:documentation>Lista de erros</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ErroMSG">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ermCDErro" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Codigo</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="ermDSErro" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Mensagem de Erro</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="ermMensagemAux" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>Mensagem de Erro Auxiliar</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element ref="ermErro" minOccurs="0" maxOccurs="1">
+          <xs:annotation>
+            <xs:documentation>
+              Campo que demonstra se houve um erro ou uma mensagem de aviso. Se o campo igual 0 aviso, se
+
+              igua a 1 erro.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ermCDErro" type="xs:string"/>
+  <xs:element name="ermDSErro" type="xs:string"/>
+  <xs:element name="ermMensagemAux" type="xs:string"/>
+  <xs:element name="ermErro" type="xs:integer"/>
+</xs:schema>

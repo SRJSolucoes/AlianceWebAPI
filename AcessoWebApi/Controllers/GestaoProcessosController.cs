@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -10,18 +11,18 @@ namespace PadraoWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ShoopingAlianceController : ControllerBase
+    public class GestaoProcessosController : ControllerBase
     {
-        private IShoopingService _service;
+        private IShoppingService _service;
 
-        public ShoopingAlianceController(IShoopingService service)
+        public GestaoProcessosController(IShoppingService service)
         {
             _service = service;
         }
 
         [HttpPost]
         [Route("/GetAllRequisicoes")]
-        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<Object> bodyVO)
+        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -30,6 +31,7 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                //var teste = new IMXMWS_GestaoDeProcessosservice().
                 //var wsGP = new MXMWS_GestaoDeProcessos.MXMWS_GestaoDeProcessosClient();
                 //var token = new MXMWS_GestaoDeProcessos.TUserProcessToken()
                 //{
@@ -40,7 +42,7 @@ namespace PadraoWebApi.Controllers
 
                 //var teste = wsGP.AprovacoesObterRegistoAsync(token, bodyVO.Login.Usuario).Result;
                 //var testn = wsGP.AprovacoesProcessaIntegracaoAsync(token, "").Result;
-                return Ok(await _service.GetAllRequisicao());
+                return Ok(await _service.GetAllRequisicao(bodyVO.Dados.UsuarioNome));
             }
             catch (ArgumentException ex)
             {
@@ -109,7 +111,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/AprovarRequisicao")]
-        public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<AprovacaoPendenteVO> reqBodyVO)
+        public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -118,7 +120,7 @@ namespace PadraoWebApi.Controllers
 
             try
             {
-                return Ok( true);
+                return Ok(new { Success = "Aprovações registradas com sucesso" });
             }
             catch (ArgumentException ex)
             {

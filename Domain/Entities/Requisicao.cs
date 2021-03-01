@@ -20,12 +20,12 @@ namespace Domain.Entidades
         public virtual  String Setor { get; set; }
         public virtual  String Requisitante { get; set; }
         public virtual  String Posicao_Funcional { get; set; }
-        public virtual  String DS_Posicao_Funcional { get; set; }
+        public virtual  String DSPosicao_Funcional { get; set; }
         public virtual  String Observacao { get; set; }
         public virtual  DateTime DataMov { get; set; }
         public virtual  String Etape { get; set; }
         public virtual  String Tpoper { get; set; }
-        public virtual  String VBReqcompra { get; set; }
+        public virtual  String Reqcompra { get; set; }
         public virtual  String Usuario { get; set; }
         public virtual  String Ordem { get; set; }
         public virtual  String Justificativa { get; set; }
@@ -37,8 +37,6 @@ namespace Domain.Entidades
         public virtual  String Encerram { get; set; }
         public virtual  String Destinacao { get; set; }
         public virtual  String CCusto { get; set; }
-
-
 
     }
 }

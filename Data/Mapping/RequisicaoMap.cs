@@ -22,12 +22,12 @@ namespace Data.Mapping
             Map(x => x.Setor).Column("SETOR");
             Map(x => x.Requisitante).Column("REQUISITANTE");
             Map(x => x.Posicao_Funcional).Column("POSICAO_FUNCIONAL");
-            Map(x => x.DS_Posicao_Funcional).Column("DSPOSICAO_FUNCIONAL");
+            Map(x => x.DSPosicao_Funcional).Column("DSPOSICAO_FUNCIONAL");
             Map(x => x.Observacao).Column("OBSERVACAO");
             Map(x => x.DataMov).Column("DATAMOV");
             Map(x => x.Etape).Column("ETAPE");
             Map(x => x.Tpoper).Column("TPOPER");
-            Map(x => x.VBReqcompra).Column("REQCOMPRA");   
+            Map(x => x.Reqcompra).Column("REQCOMPRA");   
             Map(x => x.Usuario).Column("USUARIO");
             Map(x => x.Ordem).Column("ORDEM");
             Map(x => x.Justificativa).Column("JUSTIFICATIVA");

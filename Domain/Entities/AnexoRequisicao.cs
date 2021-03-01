@@ -12,8 +12,9 @@ namespace Domain.Entidades
         public virtual String Codigo { get; set; }
         public virtual byte Anexo { get; set; }
         public virtual String FileName { get; set; }
-        public virtual String UsuInclusao { get; set; }
-        public virtual String Nome { get; set; }
-        public virtual DateTime DTInclusao { get; set; }
+
+        //public virtual String UsuInclusao { get; set; }
+        //public virtual String Nome { get; set; }
+        //public virtual DateTime DTInclusao { get; set; }
     }
 }

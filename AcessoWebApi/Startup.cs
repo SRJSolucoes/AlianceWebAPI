@@ -99,9 +99,9 @@ namespace AcessoWebApi
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "Shooping Aliance - WebAPIs",
+                    Title = "Shopping Aliansce - WebAPI",
                     Version = "1.0.0",
-                    Description = "Projeto Aliance - MXM Sistemas - Version 1.0.0 ",
+                    Description = "Projeto Aliansce - MXM Sistemas - Version 1.0.0 ",
                     Contact = new Microsoft.OpenApi.Models.OpenApiContact
                     {
                         Name = "MXM Sistemas",
@@ -161,7 +161,7 @@ namespace AcessoWebApi
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "MXM Sistemas");
+                c.SwaggerEndpoint("./swagger/v1/swagger.json", "MXM Sistemas");
             });
 
             var option = new RewriteOptions();
