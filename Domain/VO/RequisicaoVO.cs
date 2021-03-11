@@ -9,6 +9,12 @@ namespace Domain.VO
         public String ReqNumero { get; set; }
 
     }
+
+    public class ItensRequisicaoVO: RequisicaoBaseVO
+    {
+        public String UsuarioNome { get; set; }
+
+    }
     public class RequisicaoVO: RequisicaoBaseVO
     {
         public DateTime ReqData { get; set; }

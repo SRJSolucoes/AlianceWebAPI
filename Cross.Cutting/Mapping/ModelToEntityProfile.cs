@@ -11,6 +11,7 @@ namespace Cross.Cutting.Mapping
             CreateMap<RequisicaoModel, Requisicao>().ReverseMap();
             CreateMap<ITRequisicaoModel, ItemRequisicao>().ReverseMap();
             CreateMap<AnexoRequisicaoModel, AnexoRequisicao>().ReverseMap();
+            CreateMap<DetReqPagamentoModel, DetReqPagamento>().ReverseMap();
         }
     }      
 } 

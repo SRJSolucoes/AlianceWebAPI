@@ -34,6 +34,10 @@ namespace Domain.DTOs
         public String Encerram { get; set; }
         public String Destinacao { get; set; }
         public String CCusto { get; set; }
+        public String Fornecedor { get; set; }
+        public String Fornecedor_Nome { get; set; }
+        public String Tipo { get; set; }
+        public String ValorTotal { get; set; }
 
     }
 }

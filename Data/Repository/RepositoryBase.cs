@@ -259,7 +259,10 @@ namespace Data.Repository
         {
             try
             {
-                var query = _session.CreateSQLQuery(queryStatement).AddEntity(typeof(T));
+                //var query = _session.CreateSQLQuery(queryStatement)
+                //                    .AddEntity(typeof(T));
+                var query = _session.CreateSQLQuery(queryStatement)
+                            .SetResultTransformer(NHibernate.Transform.Transformers.AliasToBean<T>());
 
                 var list = query.List<T>();
 

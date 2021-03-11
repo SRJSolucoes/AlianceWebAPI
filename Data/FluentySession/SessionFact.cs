@@ -17,7 +17,7 @@ namespace Data.FluentySession
         public static ISessionFactory GetSessionFact(string usuario, string senha, string serviceName = null, string host = null, string port = null)
         {
             string connectionStringOracle = getOracleConnectionString(usuario, senha, serviceName, host, port);
-            frameworkSessionFactoryUserPas = new FluentySessionFactory<RequisicaoMap>(connectionStringOracle, "oracle");
+            frameworkSessionFactoryUserPas = new FluentySessionFactory<AnexoRequisicaoMap>(connectionStringOracle, "oracle");
 
             return frameworkSessionFactoryUserPas.CreateSessionFactory();
         }
@@ -44,7 +44,7 @@ namespace Data.FluentySession
 
                 // connectionstring template copiado do ItabusCore
                 var connectionStringMySQL = "Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.100.23)(PORT = 1521)))(CONNECT_DATA =(SERVICE_NAME = HOM)));User Id=ATUAL_SHP;Password=ATUAL_SHP;";
-                frameworkSessionFactory = new FluentySessionFactory<RequisicaoMap>(connectionStringMySQL, "oracle");
+                frameworkSessionFactory = new FluentySessionFactory<AnexoRequisicaoMap>(connectionStringMySQL, "oracle");
 
             }
             return frameworkSessionFactory.CreateSessionFactory();

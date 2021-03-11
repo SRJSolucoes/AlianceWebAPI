@@ -37,6 +37,10 @@ namespace Domain.Entidades
         public virtual  String Encerram { get; set; }
         public virtual  String Destinacao { get; set; }
         public virtual  String CCusto { get; set; }
+        public virtual  String Fornecedor { get; set; }
+        public virtual  String Fornecedor_Nome { get; set; }
+        public virtual  String Tipo { get; set; }
+        public virtual  String Valor_Total { get; set; }
 
     }
 }

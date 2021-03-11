@@ -16,14 +16,21 @@ namespace Service.Services
     {
         private IRepository<Requisicao> _repository;
         private IRepository<ItemRequisicao> _itrepository;
+        private IRepository<DetReqPagamento> _drpRepository;
         private IRepository<AnexoRequisicao> _anexorepository;
 
         private readonly IMapper _mapper;
 
-        public ShoopingService(IRepository<Requisicao> repository, IRepository<ItemRequisicao> itrepository, IRepository<AnexoRequisicao> anexorepository, IMapper mapper)
+        public ShoopingService(
+            IRepository<Requisicao> repository, 
+            IRepository<ItemRequisicao> itrepository, 
+            IRepository<DetReqPagamento> drpRepository, 
+            IRepository<AnexoRequisicao> anexorepository, 
+            IMapper mapper)
         {
             _repository = repository;
             _itrepository = itrepository;
+            _drpRepository = drpRepository;
             _anexorepository = anexorepository;
             _mapper = mapper;
         }
@@ -43,19 +50,25 @@ namespace Service.Services
             }
         }
 
-        public async Task<IEnumerable<ItemRequisicaoDTO>> GetItemdaRequisicao(string Requisicao)
+        public async Task<IEnumerable<ItemRequisicaoDTO>> GetItemdaRequisicao(string Requisicao, string usuarioNome)
         {
             try
             {
-                var requisicoes = _itrepository.QuerySelect().Where(x => x.ReqNumero == Requisicao).ToList();
-                return _mapper.Map<IEnumerable<ItemRequisicaoDTO>>(requisicoes);
+                var query = queryItemRequisicao(Requisicao, usuarioNome);
+                var itensdaRequisicao = _itrepository.ExecuteQuerySelect(query);
+                //var ListEntity = await _repository.SelectAsync();
+                return _mapper.Map<IEnumerable<ItemRequisicaoDTO>>(itensdaRequisicao);
             }
+            //try
+            //{
+            //    var requisicoes = _itrepository.QuerySelect().Where(x => x.ReqNumero == Requisicao).ToList();
+            //    return _mapper.Map<IEnumerable<ItemRequisicaoDTO>>(requisicoes);
+            //}
             catch (Exception ex)
             {
                 throw tratarExcecao(ex);
             }
         }
-
         public async Task<IEnumerable<AnexoRequisicaoDTO>> GetAnexodaRequisicao(string Requisicao)
         {
             try
@@ -84,6 +97,25 @@ namespace Service.Services
             }
         }
 
+        public async Task<IEnumerable<DetReqPagamentoDTO>> GetDetReqPagamento(string Requisicao, string codigoFornecedor)
+        {
+            try
+            {
+                var query = queryDetReqPagamento(Requisicao, codigoFornecedor);
+                var itensdaRequisicao = _drpRepository.ExecuteQuerySelect(query);
+                //var ListEntity = await _repository.SelectAsync();
+                return _mapper.Map<IEnumerable<DetReqPagamentoDTO>>(itensdaRequisicao);
+            }
+            //try
+            //{
+            //    var requisicoes = _itrepository.QuerySelect().Where(x => x.ReqNumero == Requisicao).ToList();
+            //    return _mapper.Map<IEnumerable<ItemRequisicaoDTO>>(requisicoes);
+            //}
+            catch (Exception ex)
+            {
+                throw tratarExcecao(ex);
+            }
+        }
 
         private static Exception tratarExcecao(Exception ex)
         {
@@ -107,70 +139,167 @@ namespace Service.Services
         private string queryRequisicao(string usuarioNome)
         {
             var query = $@"
-            SELECT DISTINCT RCO.rco_numero            REQNUMERO,
-                RCO.rco_data              REQDATA,
-                RCO.rco_empresa           EMPRESA,
-                EMP.EMP_NOME              EMPRESA_NOME,
-                RCO.rco_moeda             MOEDA,
-                MOE.MOE_DESCRICAO         DS_MOEDA,
-                RCO.rco_tipo              TIPOREQ,
-                TRQ.TRQ_DESCRICAO         DS_TIPOREQ,
-                RCO.rco_setor             SETOR,
-                RCO.rco_requisitante      REQUISITANTE,
-                RCO.rco_posfunc           POSICAO_FUNCIONAL,
-                ESF.ESF_DESCRICAO         DSPOSICAO_FUNCIONAL,
-                RCO.rco_obs               OBSERVACAO,
-                RCO.rco_dtmov             DATAMOV,
-                RCO.rco_etape             ETAPE,
-                RCO.rco_tpoper            TPOPER,
-                RCO.rco_reqcompra         REQCOMPRA,
-                RCO.rco_usuario           USUARIO,
-                RCO.rco_ordem             ORDEM,
-                RCO.rco_justificativa     JUSTIFICATIVA,
-                RCO.rco_devolucao         DEVOLUCAO,
-                RCO.rco_protocolo         PROTOCOLO,
-                RCO.rco_foraprazo         FORAPRAZO,
-                RCO.rco_statusaprv        STATUSAPRV,
-                RCO.rco_impresso          IMPRESSO,
-                RCO.rco_encerram          ENCERRAM,
-                RCO.rco_destinacao        DESTINACAO,
-                RCO.rco_ccusto            CCUSTO
-              FROM REQCOMPRA_RCO     RCO,
-                   EMPGERAL_EMP      EMP,
-                   MOEDA_MOE         MOE,
-                   TPREQ_TRQ         TRQ,
-                   RELAPROVIREQ_RAIR RAIR,
-                   ESTRFUNC_ESF      ESF
+            SELECT DISTINCT 
+               rco_numero        REQNUMERO,
+               rco_data          REQDATA,
+               rco_empresa       EMPRESA,
+               EMP.EMP_NOME      EMPRESA_NOME,
+               rco_moeda         MOEDA,
+               MOE.MOE_DESCRICAO DS_MOEDA,
+               rco_tipo          TIPOREQ,
+               TRQ_DESCRICAO     DS_TIPOREQ,
+               rco_setor         SETOR,
+               rco_requisitante  REQUISITANTE,
+               rco_posfunc       POSICAO_FUNCIONAL,
+               ESF.ESF_DESCRICAO DSPOSICAO_FUNCIONAL,
+               rco_obs           OBSERVACAO,
+               rco_dtmov         DATAMOV,
+               rco_etape         ETAPE,
+               rco_tpoper        TPOPER,
+               rco_reqcompra     REQCOMPRA,
+               rco_usuario       USUARIO,
+               rco_ordem         ORDEM,
+               rco_justificativa JUSTIFICATIVA,
+               rco_devolucao     DEVOLUCAO,
+               rco_protocolo     PROTOCOLO,
+               rco_foraprazo     FORAPRAZO,
+               rco_statusaprv    STATUSAPRV,
+               rco_impresso      IMPRESSO,
+               rco_encerram      ENCERRAM,
+               rco_destinacao    DESTINACAO,
+               rco_ccusto        CCUSTO,
+               TCPR.TCPR_CDFOR   FORNECEDOR,
+               FOR_NOME          FORNECEDOR_NOME,
+               CASE
+                  WHEN TCPR_NOPEDCOMPRA IS NOT NULL THEN 'PAGAMENTO'
+                  WHEN rco_reqcompra = 'S' THEN 'COMPRA'
+                  ELSE 'INTERNA'
+               END TIPO,     
+               TCPR_VLRTITULO    VALOR_TOTAL
+            FROM REQCOMPRA_RCO     RCO,
+               EMPGERAL_EMP      EMP,
+               MOEDA_MOE         MOE,
+               TPREQ_TRQ         TRQ,
+               RELAPROVIREQ_RAIR RAIR,
+               ESTRFUNC_ESF      ESF,
+               TITCP_TCPR        TCPR,
+               FORNEC_FOR
              WHERE RCO.RCO_EMPRESA = EMP.EMP_CODIGO
                AND RCO.RCO_MOEDA = MOE.MOE_CODIGO
                AND RCO.RCO_TIPO = TRQ.TRQ_CODIGO
                AND RAIR.RAIR_NUMEROREQ = RCO.RCO_NUMERO
                AND RCO.RCO_EMPRESA = ESF.ESF_CDEMPRESA
                AND RCO.RCO_POSFUNC = ESF.ESF_CODIGO
-               AND RCO.RCO_NUMERO IN
-                   (SELECT DISTINCT RAIR.RAIR_NUMEROREQ
-                      FROM APROVACOES_APR APR,
-                           LINHAAPROVITEM_LVI LVI,
-                           PROCESSOAPROV_PAPR PAPR,
-                           LINHAAPROVUSUARIO_LAU LAU,
-                           ESTRFUNC_ESF ESF,
-                           ALOCESTRFUNC_AEF AEF,
-                           RELAPROVIREQ_RAIR RAIR
-                     WHERE LAU.LAU_USUARIO = '{usuarioNome}'
-                       AND LAU.LAU_SQAPROVACAO = APR.APR_SQAPROVACAO
-                       AND LAU.LAU_SQAPROVACAO = LVI.LVI_SQAPROVACAO
-                       AND LAU.LAU_SQITEMAPROVACAO = LVI.LVI_SQITEMAPROVACAO
-                       AND LAU.LAU_SQITEMLINHAAPROVACAO = LVI.LVI_SQITEMLINHAAPROV
-                       AND PAPR.PAPR_CDPROCESSO = APR.APR_CDPROCESSO
-                       AND (ESF.ESF_CODIGO = LAU.LAU_CDESTRFUNC OR ESF.ESF_CATEGFUNC = LAU.LAU_CATFUNC)
-                       AND ESF.ESF_CDEMPRESA = LAU.LAU_CDEMPRESA
-                       AND ESF.ESF_CODIGO = AEF.AEF_CODIGO
-                       AND ESF.ESF_CDEMPRESA = AEF.AEF_CDEMPRESA
-                       AND ESF.ESF_HOMOLOGADO IS NOT NULL
-                       AND AEF.AEF_HOMOLOGADO IS NOT NULL
-                       AND AEF.AEF_USUARIO = LAU.LAU_USUARIO
-                       AND APR.APR_STAPROVACAO = 2
-                       AND RAIR.RAIR_SQAPROVACAO = APR.APR_SQAPROVACAO)";
+               AND RAIR.RAIR_NUMEROREQ = TCPR_NOPEDCOMPRA (+)
+               AND TCPR.TCPR_CDFOR = FOR_CODIGO (+)
+               AND RCO_NUMERO IN
+               (
+                  SELECT DISTINCT 
+                        RAIR.RAIR_NUMEROREQ
+                     FROM APROVACOES_APR,
+                        LINHAAPROVITEM_LVI,
+                        PROCESSOAPROV_PAPR,
+                        LINHAAPROVUSUARIO_LAU LAU,
+                        ESTRFUNC_ESF,
+                        ALOCESTRFUNC_AEF,
+                        RELAPROVIREQ_RAIR RAIR            
+                  WHERE LAU_USUARIO = '{usuarioNome}'
+                     AND LAU_SQAPROVACAO = APR_SQAPROVACAO
+                     AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
+                     AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
+                     AND LAU_SQITEMLINHAAPROVACAO = LVI_SQITEMLINHAAPROV
+                     AND PAPR_CDPROCESSO = APR_CDPROCESSO
+                     AND (ESF_CODIGO = LAU_CDESTRFUNC OR ESF_CATEGFUNC = LAU_CATFUNC)
+                     AND ESF_CDEMPRESA = LAU_CDEMPRESA
+                     AND ESF_CODIGO = AEF_CODIGO
+                     AND ESF_CDEMPRESA = AEF_CDEMPRESA
+                     AND ESF_HOMOLOGADO IS NOT NULL
+                     AND AEF_HOMOLOGADO IS NOT NULL
+                     AND AEF_USUARIO = LAU_USUARIO
+                     AND APR_STAPROVACAO = 0
+                     AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO
+               )";
+            return query;
+        }
+
+        private string queryItemRequisicao(string requisicao, string usuarioNome)
+        {
+            var query = $@"
+                 SELECT 
+                  LAU_SQAPROVACAO       SQAPROVACAO, 
+                  LAU_SQITEMAPROVACAO   SQITEMAPROVACAO,
+                  irc_numero     REQNUMERO    ,
+                  irc_numitem    NUMITEM    ,
+                  irc_tpestoq    ESTOQUE    ,
+                  irc_item       ITEM    ,
+                  irc_descricao  DESCRICAO   ,
+                  irc_grupocota  GRUPOCTA   ,
+                  irc_qtdpedida  QTDPEDIDA   ,
+                  irc_unidade    UNIDADE   ,
+                  irc_entrega    ENTREGA   ,
+                  irc_valor      VALOR   ,
+                  irc_urgente    VBURGENTE   ,
+                  irc_locentrega LOCALENTREGA  ,
+                  irc_mapa       MAPA  ,
+                  irc_qtdatendida QTDATENDIDA  ,
+                  irc_dtatendida  DTATENDIDA 
+                 FROM IREQCOMPRA_IRC IRC, 
+                       (SELECT DISTINCT
+                            RAIR.RAIR_NUMEROREQ, 
+                            RAIR.RAIR_NUMITEM, 
+                            LAU.LAU_SQAPROVACAO, 
+                            LAU.LAU_SQITEMAPROVACAO
+                          FROM APROVACOES_APR,
+                               LINHAAPROVITEM_LVI,
+                               PROCESSOAPROV_PAPR,
+                               LINHAAPROVUSUARIO_LAU lau,
+                               ESTRFUNC_ESF,
+                               ALOCESTRFUNC_AEF,
+                               RELAPROVIREQ_RAIR RAIR
+                         WHERE LAU_USUARIO = '{usuarioNome}'
+                            AND LAU_SQAPROVACAO = APR_SQAPROVACAO
+                            AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
+                            AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
+                            AND LAU_SQITEMLINHAAPROVACAO = LVI_SQITEMLINHAAPROV
+                            AND PAPR_CDPROCESSO = APR_CDPROCESSO
+                            AND (ESF_CODIGO = LAU_CDESTRFUNC OR ESF_CATEGFUNC = LAU_CATFUNC)
+                            AND ESF_CDEMPRESA = LAU_CDEMPRESA
+                            AND ESF_CODIGO = AEF_CODIGO
+                            AND ESF_CDEMPRESA = AEF_CDEMPRESA
+                            AND ESF_HOMOLOGADO IS NOT NULL
+                            AND AEF_HOMOLOGADO IS NOT NULL
+                            AND AEF_USUARIO = LAU_USUARIO
+                            AND APR_STAPROVACAO = 0
+                            AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO)
+                WHERE irc_numero = RAIR_NUMEROREQ
+                AND   irc_numitem  = RAIR_NUMITEM
+                AND   irc_numero = '{requisicao}' ";
+            return query;
+        }
+
+        private string queryDetReqPagamento(string requisicao, string codigoFornecedor)
+        {
+            var query = $@"
+                 select 
+                  PGRR.PGRR_CDGRUPO   GRPAG,
+                  GPA.GPA_DSGRUPO     DSGRPAG,
+                  PGRR.PGRR_NOCCUSTO  CCUSTO,
+                  CC.CC_DESCRICAO     DSCCUSTO,
+                  PGRR.PGRR_CTAFCAIXA CTAFLUXO,
+                  FCX.FCX_DESCRICAO   DSCTAFLUXO,
+                  PGRR.PGRR_VLRGRUPO  VLRITEM
+                 from  
+                   TITCPGR_PGRR PGRR,
+                   GRPAG_GPA GPA,
+                   FLUXOCX_FCX FCX,
+                   CCUSTO_CC CC
+                 WHERE PGRR_CDGRUPO = GPA.GPA_CDGRUPO
+                   AND PGRR.PGRR_PLFCAIXA = FCX.FCX_CODFLUX (+)
+                   AND PGRR_CTAFCAIXA = FCX.FCX_CODIGO (+)
+                   AND PGRR.PGRR_PLCCUSTO = CC.CC_CODCENT (+)
+                   AND PGRR.PGRR_NOCCUSTO = CC.CC_CODIGO (+)
+                   AND PGRR.PGRR_NOTITULO = '{requisicao}'
+                   AND PGRR.PGRR_CDFOR = '{codigoFornecedor}' ";
             return query;
         }
 
@@ -178,5 +307,6 @@ namespace Service.Services
         {
             _repository.Dispose();
         }
+
     }
 }

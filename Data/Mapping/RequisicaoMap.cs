@@ -39,8 +39,10 @@ namespace Data.Mapping
             Map(x => x.Encerram).Column("ENCERRAM");
             Map(x => x.Destinacao).Column("DESTINACAO");
             Map(x => x.CCusto).Column("CCUSTO");
-
-
+            Map(x => x.Fornecedor).Column("FORNECEDOR");
+            Map(x => x.Fornecedor_Nome).Column("FORNECEDOR_NOME");
+            Map(x => x.Tipo).Column("TIPO");
+            Map(x => x.Valor_Total).Column("VALOR_TOTAL");
         }
     }
 }

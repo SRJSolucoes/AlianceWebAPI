@@ -72,7 +72,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetItensRequisicao")]
-        public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
+        public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace PadraoWebApi.Controllers
 
             try
             {
-                return Ok(await _service.GetItemdaRequisicao(reqBodyVO.Dados.ReqNumero));
+                return Ok(await _service.GetItemdaRequisicao(reqBodyVO.Dados.ReqNumero, reqBodyVO.Dados.UsuarioNome));
             }
             catch (ArgumentException ex)
             {
@@ -102,6 +102,25 @@ namespace PadraoWebApi.Controllers
             try
             {
                 return Ok(await _service.GetAnexodaRequisicao(reqBodyVO.Dados.ReqNumero));
+            }
+            catch (ArgumentException ex)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+        
+        [HttpPost]
+        [Route("/GetDetReqPagamento")]
+        public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                return Ok(await _service.GetDetReqPagamento(reqBodyVO.Dados.ReqNumero, reqBodyVO.Dados.CdFornecedor));
             }
             catch (ArgumentException ex)
             {

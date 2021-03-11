@@ -8,7 +8,8 @@ namespace Service.Interfaces
     {
         Task<IEnumerable<RequisicaoDTO>> GetRequisicaoporCodigo(string Requisicao);
         Task<IEnumerable<RequisicaoDTO>> GetAllRequisicao(string UsuarioName);
-        Task<IEnumerable<ItemRequisicaoDTO>> GetItemdaRequisicao(string Requisicao);
+        Task<IEnumerable<ItemRequisicaoDTO>> GetItemdaRequisicao(string Requisicao, string usuarioNome);
+        Task<IEnumerable<DetReqPagamentoDTO>> GetDetReqPagamento(string Requisicao, string codigoFornecedor);
         Task<IEnumerable<AnexoRequisicaoDTO>> GetAnexodaRequisicao(string Requisicao);
     }
 }

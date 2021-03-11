@@ -6,7 +6,7 @@ namespace Domain.DTOs
 {
     public class ItemRequisicaoDTO
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public String ReqNumero { get; set; }
         public int NumItem { get; set; }
         public String Estoque { get; set; }
@@ -22,5 +22,7 @@ namespace Domain.DTOs
         public String Mapa { get; set; }
         public Decimal QTDAtendida { get; set; }
         public DateTime DTAtendida { get; set; }
+        public String SqAprovacao { get; set; }
+        public String SqItemAprovacao { get; set; }
     }
 }
