@@ -24,7 +24,7 @@ namespace Domain.Models
         public String Tpoper { get; set; }
         public String VBReqcompra { get; set; }
         public String Usuario { get; set; }
-        public String Ordem { get; set; }
+        public Int64 Ordem { get; set; }
         public String Justificativa { get; set; }
         public String Devolucao { get; set; }
         public String Protocolo { get; set; }
@@ -37,7 +37,7 @@ namespace Domain.Models
         public String Fornecedor { get; set; }
         public String Fornecedor_Nome { get; set; }
         public String Tipo { get; set; }
-        public String ValorTotal { get; set; }
+        public Double ValorTotal { get; set; }
         public Int64 SqAprovacao { get; set; }
 
         //private Guid _idparceiro;

@@ -27,7 +27,7 @@ namespace Domain.Entidades
         public virtual String Tpoper { get; set; }
         public virtual String Reqcompra { get; set; }
         public virtual String Usuario { get; set; }
-        public virtual String Ordem { get; set; }
+        public virtual Int64 Ordem { get; set; }
         public virtual String Justificativa { get; set; }
         public virtual String Devolucao { get; set; }
         public virtual String Protocolo { get; set; }
@@ -40,7 +40,7 @@ namespace Domain.Entidades
         public virtual String Fornecedor { get; set; }
         public virtual String Fornecedor_Nome { get; set; }
         public virtual String Tipo { get; set; }
-        public virtual String Valor_Total { get; set; }
+        public virtual Double Valor_Total { get; set; }
         public virtual Int64 SqAprovacao { get; set; }
 
     }
