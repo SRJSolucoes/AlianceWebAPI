@@ -6,6 +6,8 @@ namespace Domain.Models
 {
     public class ITRequisicaoModel
     {
+        public Int64 SqAprovacao { get; set; }
+        public int SqItemAprovacao { get; set; }
         public String ReqNumero { get; set; }
         public int NumItem { get; set; }
         public String Estoque { get; set; }

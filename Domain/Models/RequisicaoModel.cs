@@ -38,6 +38,7 @@ namespace Domain.Models
         public String Fornecedor_Nome { get; set; }
         public String Tipo { get; set; }
         public String ValorTotal { get; set; }
+        public Int64 SqAprovacao { get; set; }
 
         //private Guid _idparceiro;
         //private Guid _fkparceiro;

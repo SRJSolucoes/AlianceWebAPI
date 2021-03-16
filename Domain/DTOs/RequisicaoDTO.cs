@@ -7,6 +7,7 @@ namespace Domain.DTOs
     public class RequisicaoDTO
     {
         public String ReqNumero { get; set; }
+        public Int64 SqAprovacao { get; set; }
         public DateTime ReqData { get; set; }
         public String Empresa { get; set; }
         public String Empresa_Nome { get; set; }

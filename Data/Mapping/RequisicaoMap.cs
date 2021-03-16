@@ -43,6 +43,7 @@ namespace Data.Mapping
             Map(x => x.Fornecedor_Nome).Column("FORNECEDOR_NOME");
             Map(x => x.Tipo).Column("TIPO");
             Map(x => x.Valor_Total).Column("VALOR_TOTAL");
+            Map(x => x.SqAprovacao).Column("SQAPROVACAO");
         }
     }
 }
