@@ -10,7 +10,7 @@ namespace Domain.Entidades
         public virtual int Id { get; set; }
         public virtual String ReqNumero { get; set; }
         public virtual Decimal Codigo { get; set; }
-        public virtual byte Anexo { get; set; }
+        public virtual byte[] Anexo { get; set; }
         public virtual String FileName { get; set; }
 
         //public virtual String UsuInclusao { get; set; }

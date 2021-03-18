@@ -1,5 +1,6 @@
 ﻿using AcessoWebApi.Infrastructure.Security;
 using Data.FluentySession;
+using Data.Handlers;
 using Domain.Entidades;
 using Domain.Enum;
 using Domain.Enum.Core;
@@ -8,11 +9,13 @@ using Domain.Models;
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace Data.Repository
@@ -270,6 +273,15 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
+                if (ex is ArgumentException)
+                {
+                    throw new HttpStatusException(
+                        HttpStatusCode.InternalServerError, 
+                        "Falha ao realizar a conversão da lista para o lista do tipo informado." 
+                        +" Verifique se a tipagem dos campos classe correspondem aos campos da query. " 
+                        + ex.Message
+                    );
+                }
                 throw ex;
             }
         }

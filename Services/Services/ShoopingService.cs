@@ -3,6 +3,8 @@ using Data.Handlers;
 using Domain.DTOs;
 using Domain.Entidades;
 using Domain.Interfaces;
+using NHibernate;
+using Oracle.ManagedDataAccess.Client;
 using Service.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -119,11 +121,11 @@ namespace Service.Services
 
         private static Exception tratarExcecao(Exception ex)
         {
-            if (ex.InnerException != null && ((Oracle.ManagedDataAccess.Client.OracleException)ex.InnerException).Message.Contains("ORA-01017"))
+            if (ex.InnerException is OracleException && ((OracleException)ex.InnerException).Message.Contains("ORA-01017"))
             {
                 return new HttpStatusException(HttpStatusCode.BadRequest, "Usuario ou senha inválido");
             }
-            if (ex.InnerException != null && ((Oracle.ManagedDataAccess.Client.OracleException)ex.InnerException).Message.Contains("ORA-00942"))
+            if (ex.InnerException is OracleException && ((OracleException)ex.InnerException).Message.Contains("ORA-00942"))
             {
                 string nomeTabela = "Usada pelo recurso";
                 if (ex.Message != null && ex.Message.Contains("from"))
@@ -131,6 +133,10 @@ namespace Service.Services
                     nomeTabela = ex.Message.Split("from ")[1].Split(" ")[0];
                 }
                 return new HttpStatusException(HttpStatusCode.BadRequest, "Verifique se o usuário tem acesso a View/Tabela " + nomeTabela);
+            }
+            if (ex is ADOException)
+            {
+                return new HttpStatusException(HttpStatusCode.InternalServerError, "Falha no processo de casting para classe model do recurso acessado. Description: " + ex.Message);
             }
 
             return new HttpStatusException(HttpStatusCode.InternalServerError, "Ocorreu um erro interno: " + ex.Message);
@@ -279,7 +285,7 @@ namespace Service.Services
         private string queryDetReqPagamento(string requisicao, string codigoFornecedor)
         {
             var query = $@"
-                 select 
+                select 
                   PGRR.PGRR_CDGRUPO   GRPAG,
                   GPA.GPA_DSGRUPO     DSGRPAG,
                   PGRR.PGRR_NOCCUSTO  CCUSTO,
@@ -291,14 +297,18 @@ namespace Service.Services
                    TITCPGR_PGRR PGRR,
                    GRPAG_GPA GPA,
                    FLUXOCX_FCX FCX,
-                   CCUSTO_CC CC
+                   CCUSTO_CC CC,
+                   TITCP_TCPR TCPR
                  WHERE PGRR_CDGRUPO = GPA.GPA_CDGRUPO
                    AND PGRR.PGRR_PLFCAIXA = FCX.FCX_CODFLUX (+)
                    AND PGRR_CTAFCAIXA = FCX.FCX_CODIGO (+)
                    AND PGRR.PGRR_PLCCUSTO = CC.CC_CODCENT (+)
                    AND PGRR.PGRR_NOCCUSTO = CC.CC_CODIGO (+)
-                   AND PGRR.PGRR_NOTITULO = '{requisicao}'
-                   AND PGRR.PGRR_CDFOR = '{codigoFornecedor}' ";
+                   AND PGRR.PGRR_CDFOR = TCPR.TCPR_CDFOR
+                   and PGRR.PGRR_NOTITULO = TCPR.TCPR_NOTITULO
+                   and TCPR.TCPR_NOPEDCOMPRA = '{requisicao}'
+                   AND PGRR.PGRR_CDFOR = '{codigoFornecedor}'
+            ";
             return query;
         }
 

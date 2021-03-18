@@ -38,7 +38,7 @@ namespace Domain.DTOs
         public String Fornecedor { get; set; }
         public String Fornecedor_Nome { get; set; }
         public String Tipo { get; set; }
-        public Double ValorTotal { get; set; }
+        public Double Valor_Total { get; set; }
 
     }
 }

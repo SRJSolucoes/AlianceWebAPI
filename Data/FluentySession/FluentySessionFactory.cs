@@ -70,10 +70,15 @@ namespace Data.FluentySession
             }
             catch (FluentConfigurationException ex)
             {
-                if (((Oracle.ManagedDataAccess.Client.OracleException)ex.InnerException).Message.Contains("ORA-01017"))
+                if (ex.InnerException is OracleException && ((OracleException)ex.InnerException).Message.Contains("ORA-01017"))
                 {
                     throw new HttpStatusException(HttpStatusCode.BadRequest, "Usuario ou senha inválido");
                 }
+                if (ex.InnerException is OracleException && ((OracleException)ex.InnerException).Message.Contains("ORA-12514"))
+                {
+                    throw new HttpStatusException(HttpStatusCode.BadRequest, ex.InnerException.Message);
+                }
+                throw ex;
             }
 
             return sessionFactory;
