@@ -42,6 +42,8 @@ namespace Domain.Entidades
         public virtual String Tipo { get; set; }
         public virtual Double Valor_Total { get; set; }
         public virtual Int64 SqAprovacao { get; set; }
+        public virtual Int64 SqItemLinhaAprov { get; set; }
+        public virtual String Cat_Funcional { get; set; }
 
     }
 }

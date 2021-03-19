@@ -39,6 +39,8 @@ namespace Domain.Models
         public String Tipo { get; set; }
         public Double ValorTotal { get; set; }
         public Int64 SqAprovacao { get; set; }
+        public Int64 SqItemLinhaAprov { get; set; }
+        public String Cat_Funcional { get; set; }
 
         //private Guid _idparceiro;
         //private Guid _fkparceiro;

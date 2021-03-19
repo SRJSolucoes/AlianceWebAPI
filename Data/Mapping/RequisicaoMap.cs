@@ -27,7 +27,7 @@ namespace Data.Mapping
             Map(x => x.DataMov).Column("DATAMOV");
             Map(x => x.Etape).Column("ETAPE");
             Map(x => x.Tpoper).Column("TPOPER");
-            Map(x => x.Reqcompra).Column("REQCOMPRA");   
+            Map(x => x.Reqcompra).Column("REQCOMPRA");
             Map(x => x.Usuario).Column("USUARIO");
             Map(x => x.Ordem).Column("ORDEM");
             Map(x => x.Justificativa).Column("JUSTIFICATIVA");
@@ -44,6 +44,8 @@ namespace Data.Mapping
             Map(x => x.Tipo).Column("TIPO");
             Map(x => x.Valor_Total).Column("VALOR_TOTAL");
             Map(x => x.SqAprovacao).Column("SQAPROVACAO");
+            Map(x => x.SqItemLinhaAprov).Column("SQITEMLINHAAPROV");
+            Map(x => x.Cat_Funcional).Column("CAT_FUNCIONAL");
         }
     }
 }
