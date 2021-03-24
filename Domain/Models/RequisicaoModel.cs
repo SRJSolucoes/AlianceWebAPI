@@ -41,6 +41,8 @@ namespace Domain.Models
         public Int64 SqAprovacao { get; set; }
         public Int64 SqItemLinhaAprov { get; set; }
         public String Cat_Funcional { get; set; }
+        public Int64 SqItemAprovacao { get; set; }
+        public String Usuario_Aprovador { get; set; }
 
         //private Guid _idparceiro;
         //private Guid _fkparceiro;

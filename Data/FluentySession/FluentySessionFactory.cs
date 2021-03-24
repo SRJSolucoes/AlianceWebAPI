@@ -78,6 +78,14 @@ namespace Data.FluentySession
                 {
                     throw new HttpStatusException(HttpStatusCode.BadRequest, ex.InnerException.Message);
                 }
+                if (ex.InnerException is OracleException)
+                {
+                    if (ex.InnerException.Message != null)
+                    {
+                        throw new HttpStatusException(HttpStatusCode.InternalServerError, ex.InnerException.Message);
+                    }
+                    throw new HttpStatusException(HttpStatusCode.InternalServerError, ex.Message);
+                }
                 throw ex;
             }
 

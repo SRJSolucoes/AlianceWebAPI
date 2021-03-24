@@ -37,12 +37,12 @@ namespace PadraoWebApi.Controllers
                 //{
                 //    User = bodyVO.Login.Usuario,
                 //    Pw = bodyVO.Login.Senha,
-                //    Amb = bodyVO.Login.Ambiente,
+                //    Amb = "(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.0.5)(PORT=1525)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=MXMDS9)))",
                 //};
 
                 //var teste = wsGP.AprovacoesObterRegistoAsync(token, bodyVO.Login.Usuario).Result;
                 //var testn = wsGP.AprovacoesProcessaIntegracaoAsync(token, "").Result;
-                return Ok(await _service.GetAllRequisicao(bodyVO.Dados.UsuarioNome));
+                return Ok(await _service.GetAllRequisicao(bodyVO.Dados.UsuarioEmail));
             }
             catch (ArgumentException ex)
             {

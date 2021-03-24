@@ -46,6 +46,8 @@ namespace Data.Mapping
             Map(x => x.SqAprovacao).Column("SQAPROVACAO");
             Map(x => x.SqItemLinhaAprov).Column("SQITEMLINHAAPROV");
             Map(x => x.Cat_Funcional).Column("CAT_FUNCIONAL");
+            Map(x => x.SqItemAprovacao).Column("SQITEMAPROVACAO");
+            Map(x => x.Usuario_Aprovador).Column("USUARIO_APROVADOR");
         }
     }
 }

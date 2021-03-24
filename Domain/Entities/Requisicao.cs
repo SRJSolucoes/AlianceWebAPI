@@ -44,6 +44,9 @@ namespace Domain.Entidades
         public virtual Int64 SqAprovacao { get; set; }
         public virtual Int64 SqItemLinhaAprov { get; set; }
         public virtual String Cat_Funcional { get; set; }
+        public virtual Int64 SqItemAprovacao { get; set; }
+        public virtual String Usuario_Aprovador { get; set; }
+
 
     }
 }

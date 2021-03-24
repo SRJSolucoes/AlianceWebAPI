@@ -37,11 +37,11 @@ namespace Service.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<RequisicaoDTO>> GetAllRequisicao(string usuarioName)
+        public async Task<IEnumerable<RequisicaoDTO>> GetAllRequisicao(string usuarioEmail)
         {
             try
             {
-                var query = queryRequisicao(usuarioName);
+                var query = queryRequisicao(usuarioEmail);
                 var requisicoes = _repository.ExecuteQuerySelect(query);
                 //var ListEntity = await _repository.SelectAsync();
                 return _mapper.Map<IEnumerable<RequisicaoDTO>>(requisicoes);
@@ -142,98 +142,103 @@ namespace Service.Services
             return new HttpStatusException(HttpStatusCode.InternalServerError, "Ocorreu um erro interno: " + ex.Message);
         }
 
-        private string queryRequisicao(string usuarioNome)
+        private string queryRequisicao(string usuarioEmail)
         {
-            var query = $@"SELECT 
-		                        DISTINCT rco_numero             REQNUMERO,
-                                        LAU_SQAPROVACAO         SQAPROVACAO,
-        	                            LVI_SQITEMLINHAAPROV    SQITEMLINHAAPROV,
-                                        rco_data                REQDATA,
-                                        ESF.ESF_CDEMPRESA       EMPRESA,
-                                        EMP.EMP_NOME            EMPRESA_NOME,
-                                        TCPR.TCPR_CDFOR         FORNECEDOR,
-                                        FOR_NOME                FORNECEDOR_NOME,
-                                        CASE
-                                           WHEN TCPR_NOPEDCOMPRA IS NOT NULL THEN 'PAGAMENTO'
-                                           WHEN rco_reqcompra = 'S' THEN 'COMPRA'
-                                           ELSE 'INTERNA'
-                                        END TIPO,     
-                                        rco_moeda         MOEDA,
-                                        MOE.MOE_DESCRICAO DS_MOEDA,
-                                        rco_tipo          TIPOREQ,
-                                        TRQ_DESCRICAO     DS_TIPOREQ,
-                                        rco_setor         SETOR,
-                                        rco_requisitante  REQUISITANTE,
-                                        APR.ESF_CODIGO    POSICAO_FUNCIONAL,
-                                        ESF.ESF_DESCRICAO DSPOSICAO_FUNCIONAL,
-        	                            ESF.ESF_CATEGFUNC CAT_FUNCIONAL,
-                                        rco_obs           OBSERVACAO,
-                                        rco_dtmov         DATAMOV,
-                                        rco_etape         ETAPE,
-                                        rco_tpoper        TPOPER,
-                                        rco_reqcompra     REQCOMPRA,
-                                        rco_usuario       USUARIO,
-                                        rco_ordem         ORDEM,
-                                        rco_justificativa JUSTIFICATIVA,
-                                        rco_devolucao     DEVOLUCAO,
-                                        rco_protocolo     PROTOCOLO,
-                                        rco_foraprazo     FORAPRAZO,
-                                        rco_statusaprv    STATUSAPRV,
-                                        rco_impresso      IMPRESSO,
-                                        rco_encerram      ENCERRAM,
-                                        rco_destinacao    DESTINACAO,
-                                        rco_ccusto        CCUSTO,
-                                        TCPR_VLRTITULO    VALOR_TOTAL
-                          FROM REQCOMPRA_RCO     RCO,
-                               EMPGERAL_EMP      EMP,
-                               MOEDA_MOE         MOE,
-                               TPREQ_TRQ         TRQ,
-                               --RELAPROVIREQ_RAIR RAIR,
-                               ESTRFUNC_ESF      ESF,
-                               TITCP_TCPR        TCPR,
-                               FORNEC_FOR,
-                               (
+            var query = $@"SELECT DISTINCT 
+                                rco_numero        	REQNUMERO,
+                                LAU_SQAPROVACAO   	SQAPROVACAO,
+                                LVI_SQITEMAPROVACAO 	SQITEMAPROVACAO,   --NOVO
+                                LVI_SQITEMLINHAAPROV 	SQITEMLINHAAPROV,
+                                USER_APROVADOR		USUARIO_APROVADOR,    --NOVO
+                                rco_data          	REQDATA,
+                                ESF.ESF_CDEMPRESA       EMPRESA,
+                                EMP.EMP_NOME      	EMPRESA_NOME,
+                                TCPR.TCPR_CDFOR   	FORNECEDOR,
+                                FOR_NOME          	FORNECEDOR_NOME,
+                                CASE
+                                   WHEN TCPR_NOPEDCOMPRA IS NOT NULL THEN 'PAGAMENTO'
+                                   WHEN rco_reqcompra = 'S' THEN 'COMPRA'
+                                   ELSE 'INTERNA'
+                                END TIPO,     
+                                rco_moeda         MOEDA,
+                                MOE.MOE_DESCRICAO DS_MOEDA,
+                                rco_tipo          TIPOREQ,
+                                TRQ_DESCRICAO     DS_TIPOREQ,
+                                rco_setor         SETOR,
+                                rco_requisitante  REQUISITANTE,
+                                APR.ESF_CODIGO    POSICAO_FUNCIONAL,
+                                ESF.ESF_DESCRICAO DSPOSICAO_FUNCIONAL,
+                        ESF.ESF_CATEGFUNC CAT_FUNCIONAL, --** NOVO CAMPO
+                                rco_obs           OBSERVACAO,
+                                rco_dtmov         DATAMOV,
+                                rco_etape         ETAPE,
+                                rco_tpoper        TPOPER,
+                                rco_reqcompra     REQCOMPRA,
+                                rco_usuario       USUARIO,
+                                rco_ordem         ORDEM,
+                                rco_justificativa JUSTIFICATIVA,
+                                rco_devolucao     DEVOLUCAO,
+                                rco_protocolo     PROTOCOLO,
+                                rco_foraprazo     FORAPRAZO,
+                                rco_statusaprv    STATUSAPRV,
+                                rco_impresso      IMPRESSO,
+                                rco_encerram      ENCERRAM,
+                                rco_destinacao    DESTINACAO,
+                                rco_ccusto        CCUSTO,
+                                TCPR_VLRTITULO    VALOR_TOTAL
+                  FROM REQCOMPRA_RCO     RCO,
+                       EMPGERAL_EMP      EMP,
+                       MOEDA_MOE         MOE,
+                       TPREQ_TRQ         TRQ,
+                       --RELAPROVIREQ_RAIR RAIR,
+                       ESTRFUNC_ESF      ESF,
+                       TITCP_TCPR        TCPR,
+                       FORNEC_FOR,
+                       (
+                       SELECT DISTINCT 
+                           LAU_USUARIO USER_APROVADOR,
+                           RAIR.RAIR_NUMEROREQ, 
+                           LAU_SQAPROVACAO, 
+                           LVI.LVI_SQITEMAPROVACAO, 
+                           LVI.LVI_SQITEMLINHAAPROV, 
+                           ESF.ESF_CDEMPRESA, 
+                           ESF.ESF_CODIGO, 
+                           ESF.ESF_CATEGFUNC
+                          FROM APROVACOES_APR,
+                               LINHAAPROVITEM_LVI LVI,
+                               PROCESSOAPROV_PAPR,
+                               LINHAAPROVUSUARIO_LAU,
+                               ESTRFUNC_ESF ESF,
+                               ALOCESTRFUNC_AEF,
+                               RELAPROVIREQ_RAIR RAIR,
+                               USUARIO_USO USO
+                         WHERE LAU_USUARIO = USO_CODIGO
+                           AND USO.USO_ENDEMAIL = '{usuarioEmail}'  ---'bruno.amaral@santanaparqueshopping.com.br'
+                           --AND LAU_USUARIO = 'BRUNO_AMARAL' AND
+                           AND LAU_SQAPROVACAO = APR_SQAPROVACAO
+                           AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
+                           AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
+                           AND LAU_SQITEMLINHAAPROVACAO = LVI_SQITEMLINHAAPROV
+                           AND PAPR_CDPROCESSO = APR_CDPROCESSO
+                           AND (ESF_CODIGO = LAU_CDESTRFUNC OR ESF_CATEGFUNC = LAU_CATFUNC)
+                           AND ESF_CDEMPRESA = LAU_CDEMPRESA
+                           AND ESF_CODIGO = AEF_CODIGO
+                           AND ESF_CDEMPRESA = AEF_CDEMPRESA
+                           AND ESF_HOMOLOGADO IS NOT NULL
+                           AND AEF_HOMOLOGADO IS NOT NULL
+                           AND AEF_USUARIO = LAU_USUARIO
+                           AND APR_STAPROVACAO = 0
+                           AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO
 
-                               SELECT DISTINCT
-                                   RAIR.RAIR_NUMEROREQ, 
-                                   LAU_SQAPROVACAO, 
-                                   LVI.LVI_SQITEMAPROVACAO, 
-                                   LVI.LVI_SQITEMLINHAAPROV, 
-                                   ESF.ESF_CDEMPRESA, 
-                                   ESF.ESF_CODIGO, 
-                                   ESF.ESF_CATEGFUNC
-                                  FROM APROVACOES_APR,
-                                       LINHAAPROVITEM_LVI LVI,
-                                       PROCESSOAPROV_PAPR,
-                                       LINHAAPROVUSUARIO_LAU,
-                                       ESTRFUNC_ESF ESF,
-                                       ALOCESTRFUNC_AEF,
-                                       RELAPROVIREQ_RAIR RAIR
-                                 WHERE LAU_USUARIO = '{usuarioNome}' AND
-                                    LAU_SQAPROVACAO = APR_SQAPROVACAO
-                                   AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
-                                   AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
-                                   AND LAU_SQITEMLINHAAPROVACAO = LVI_SQITEMLINHAAPROV
-                                   AND PAPR_CDPROCESSO = APR_CDPROCESSO
-                                   AND (ESF_CODIGO = LAU_CDESTRFUNC OR ESF_CATEGFUNC = LAU_CATFUNC)
-                                   AND ESF_CDEMPRESA = LAU_CDEMPRESA
-                                   AND ESF_CODIGO = AEF_CODIGO
-                                   AND ESF_CDEMPRESA = AEF_CDEMPRESA
-                                   AND ESF_HOMOLOGADO IS NOT NULL
-                                   AND AEF_HOMOLOGADO IS NOT NULL
-                                   AND AEF_USUARIO = LAU_USUARIO
-                                   AND APR_STAPROVACAO = 0
-                                   AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO
-
-                                   ) APR
-                         WHERE APR.ESF_CDEMPRESA = EMP.EMP_CODIGO
-                           AND RCO.RCO_MOEDA = MOE.MOE_CODIGO
-                           AND RCO.RCO_TIPO = TRQ.TRQ_CODIGO
-                           AND RCO.RCO_EMPRESA = ESF.ESF_CDEMPRESA
-                           AND APR.ESF_CODIGO = ESF.ESF_CODIGO
-                           AND RCO.RCO_NUMERO = TCPR_NOPEDCOMPRA (+)
-                           AND TCPR.TCPR_CDFOR = FOR_CODIGO (+)
-                           AND RCO_NUMERO = APR.RAIR_NUMEROREQ
+                           ) APR
+                 WHERE APR.ESF_CDEMPRESA = EMP.EMP_CODIGO
+                   AND RCO.RCO_MOEDA = MOE.MOE_CODIGO
+                   AND RCO.RCO_TIPO = TRQ.TRQ_CODIGO
+                   AND RCO.RCO_EMPRESA = ESF.ESF_CDEMPRESA
+                   AND APR.ESF_CODIGO = ESF.ESF_CODIGO
+                   AND RCO.RCO_NUMERO = TCPR_NOPEDCOMPRA (+)
+                   AND TCPR.TCPR_CDFOR = FOR_CODIGO (+)
+                   AND RCO_NUMERO = APR.RAIR_NUMEROREQ
                 ";
             return query;
         }

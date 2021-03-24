@@ -6,7 +6,7 @@ namespace Domain.VO
 {
     public class UsuarioVO
     {
-        public String UsuarioNome { get; set; }
+        public String UsuarioEmail { get; set; }
 
     }
 }

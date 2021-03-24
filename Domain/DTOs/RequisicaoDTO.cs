@@ -8,7 +8,9 @@ namespace Domain.DTOs
     {
         public String ReqNumero { get; set; }
         public Int64 SqAprovacao { get; set; }
+        public Int64 SqItemAprovacao { get; set; }
         public Int64 SqItemLinhaAprov { get; set; }
+        public String Usuario_Aprovador { get; set; }
         public DateTime ReqData { get; set; }
         public String Empresa { get; set; }
         public String Empresa_Nome { get; set; }
