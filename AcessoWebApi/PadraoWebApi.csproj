@@ -37,7 +37,6 @@
   <ItemGroup>
     <Folder Include="Intefaces\" />
     <Folder Include="XML\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@
 using Domain.VO.GestaoProcessos;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Domain.VO
@@ -10,29 +11,44 @@ namespace Domain.VO
     {
 
         //public string Identificador { get; set; }
+
+        [Required(ErrorMessage = "SequenciaAprovacao é um campo obrigatório")]
         public long? SequenciaAprovacao { get; set; }
+
+        [Required(ErrorMessage = "SequenciaItemAprovacao é um campo obrigatório")]
         public long? SequenciaItemAprovacao { get; set; }
+
+        [Required(ErrorMessage = "SequenciaItemLinhaAprovacao é um campo obrigatório")]
         public long? SequenciaItemLinhaAprovacao { get; set; }
+
+        [Required(ErrorMessage = "Sequencia é um campo obrigatório")]
         public long? Sequencia { get; set; }
+
+        [Required(ErrorMessage = "Status é um campo obrigatório")]
         public long? Status { get; set; }
         //public string DescricaoStatus { get; set; }
+
         public string StatusEspecifico { get; set; }
-        public string CodigoEmpresa { get; set; }
-        public string EstruturaFuncional { get; set; }
-        public string CategoriaFuncional { get; set; }
+        //public string CodigoEmpresa { get; set; }
+        //public string EstruturaFuncional { get; set; }
+        //public string CategoriaFuncional { get; set; }
+
         public long? TipoAprovacao { get; set; }
+        [Required(ErrorMessage = "Aprovador é um campo obrigatório")]
         public string Aprovador { get; set; }
+        [Required(ErrorMessage = "DataAprovacao é um campo obrigatório")]
         public DateTime? DataAprovacao { get; set; }
         public string Justificativa { get; set; }
-        public string NumeroRequisicao { get; set; }
-        public string Requisitante { get; set; }
-        public string Moeda { get; set; }
-        public DateTime? Data { get; set; }
-        public string DescricaoProcesso { get; set; }
+        //public string NumeroRequisicao { get; set; }
+        //public string Requisitante { get; set; }
+        //public string Moeda { get; set; }
+        //public DateTime? Data { get; set; }
+        //public string DescricaoProcesso { get; set; }
+        [Required(ErrorMessage = "CodigoProcesso é um campo obrigatório")]
         public long? CodigoProcesso { get; set; }
-        public decimal? NumeroItem { get; set; }
-        public string DescricaoRequisicao { get; set; }
-        public string ProximoAprovador { get; set; }
+        //public decimal? NumeroItem { get; set; }
+        //public string DescricaoRequisicao { get; set; }
+        //public string ProximoAprovador { get; set; }
 
 
         //public string CodigoTipoCobranca { get; set; }

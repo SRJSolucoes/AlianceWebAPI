@@ -10,7 +10,8 @@
 
 #pragma warning disable 1591
 
-namespace MXM.Framework.Web.XML {
+namespace PadraoWebApi.XML
+{
     
     
     /// <summary>
