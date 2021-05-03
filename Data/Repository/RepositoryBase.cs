@@ -34,8 +34,18 @@ namespace Data.Repository
             var sessaoDefault = session("Acesso");
             ISession sessaoCustomizada = null;
 
+            var userFromToken = currentUserAccessor.GetMXMLoginFromToken();
+            if (userFromToken != null)
+            {
+                var sessionFact = SessionFact.GetSessionFact(userFromToken.Usuario, userFromToken.Senha, userFromToken.ServiceName);
+                if (sessionFact != null)
+                {
+                    sessaoCustomizada = sessionFact.OpenSession();
+                }
+            }
+
             var userFromBody = currentUserAccessor.GetMXMLoginFromRequestBody();
-            if (userFromBody != null)
+            if (userFromBody != null && sessaoCustomizada == null)
             {
                 var sessionFact = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha, userFromBody.ServiceName);
                 if (sessionFact != null)
@@ -45,7 +55,7 @@ namespace Data.Repository
             }
 
             var userFromHeader = currentUserAccessor.GetMXMLoginFromRequestHeaderBasic();
-            if (userFromHeader != null)
+            if (userFromHeader != null && sessaoCustomizada == null)
             {
                 var sessionFact = SessionFact.GetSessionFact(userFromHeader.Usuario, userFromHeader.Senha, userFromHeader.ServiceName);
                 if (sessionFact != null)

@@ -145,16 +145,16 @@ namespace Service.Services
         private string queryRequisicao(string usuarioEmail)
         {
             var query = $@"SELECT DISTINCT 
-                                rco_numero        	REQNUMERO,
-                                LAU_SQAPROVACAO   	SQAPROVACAO,
-                                LVI_SQITEMAPROVACAO 	SQITEMAPROVACAO,   --NOVO
-                                LVI_SQITEMLINHAAPROV 	SQITEMLINHAAPROV,
-                                USER_APROVADOR		USUARIO_APROVADOR,    --NOVO
-                                rco_data          	REQDATA,
+                                rco_numero        REQNUMERO,
+                                LAU_SQAPROVACAO   SQAPROVACAO,
+                                LVI_SQITEMAPROVACAO SQITEMAPROVACAO,   
+                                LVI_SQITEMLINHAAPROV SQITEMLINHAAPROV,
+                                USER_APROVADOR    USUARIO_APROVADOR,    
+                                rco_data          REQDATA,
                                 ESF.ESF_CDEMPRESA       EMPRESA,
-                                EMP.EMP_NOME      	EMPRESA_NOME,
-                                TCPR.TCPR_CDFOR   	FORNECEDOR,
-                                FOR_NOME          	FORNECEDOR_NOME,
+                                EMP.EMP_NOME      EMPRESA_NOME,
+                                TCPR.TCPR_CDFOR   FORNECEDOR,
+                                FOR_NOME          FORNECEDOR_NOME,
                                 CASE
                                    WHEN TCPR_NOPEDCOMPRA IS NOT NULL THEN 'PAGAMENTO'
                                    WHEN rco_reqcompra = 'S' THEN 'COMPRA'
@@ -190,14 +190,14 @@ namespace Service.Services
                        EMPGERAL_EMP      EMP,
                        MOEDA_MOE         MOE,
                        TPREQ_TRQ         TRQ,
-                       --RELAPROVIREQ_RAIR RAIR,
                        ESTRFUNC_ESF      ESF,
                        TITCP_TCPR        TCPR,
                        FORNEC_FOR,
                        (
-                       SELECT DISTINCT 
-                           LAU_USUARIO USER_APROVADOR,
-                           RAIR.RAIR_NUMEROREQ, 
+
+                       SELECT DISTINCT * FROM (
+                       SELECT     LAU_USUARIO USER_APROVADOR,
+                                   RAIR.RAIR_NUMEROREQ, 
                            LAU_SQAPROVACAO, 
                            LVI.LVI_SQITEMAPROVACAO, 
                            LVI.LVI_SQITEMLINHAAPROV, 
@@ -213,8 +213,7 @@ namespace Service.Services
                                RELAPROVIREQ_RAIR RAIR,
                                USUARIO_USO USO
                          WHERE LAU_USUARIO = USO_CODIGO
-                           AND USO.USO_ENDEMAIL = '{usuarioEmail}'  ---'bruno.amaral@santanaparqueshopping.com.br'
-                           --AND LAU_USUARIO = 'BRUNO_AMARAL' AND
+                           AND USO.USO_ENDEMAIL = '{usuarioEmail}'
                            AND LAU_SQAPROVACAO = APR_SQAPROVACAO
                            AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
                            AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
@@ -229,6 +228,46 @@ namespace Service.Services
                            AND AEF_USUARIO = LAU_USUARIO
                            AND APR_STAPROVACAO = 0
                            AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO
+                        UNION ALL
+                       SELECT DAL_USUORTOGADO USER_APROVADOR,
+                                   RAIR.RAIR_NUMEROREQ, 
+                           LAU_SQAPROVACAO, 
+                           LVI.LVI_SQITEMAPROVACAO, 
+                           LVI.LVI_SQITEMLINHAAPROV, 
+                           ESF.ESF_CDEMPRESA, 
+                           ESF.ESF_CODIGO, 
+                           ESF.ESF_CATEGFUNC
+                          FROM APROVACOES_APR,
+                               LINHAAPROVITEM_LVI LVI,
+                               PROCESSOAPROV_PAPR,
+                               LINHAAPROVUSUARIO_LAU,
+                               ESTRFUNC_ESF ESF,
+                               ALOCESTRFUNC_AEF,
+                               RELAPROVIREQ_RAIR RAIR,
+                               USUARIO_USO USO,
+                               DELAGALCADO_DAL DAL
+                         WHERE USO.USO_ENDEMAIL = '{usuarioEmail}'
+                           AND LAU_SQAPROVACAO = APR_SQAPROVACAO
+                           AND LAU_SQAPROVACAO = LVI_SQAPROVACAO
+                           AND LAU_SQITEMAPROVACAO = LVI_SQITEMAPROVACAO
+                           AND LAU_SQITEMLINHAAPROVACAO = LVI_SQITEMLINHAAPROV
+                           AND PAPR_CDPROCESSO = APR_CDPROCESSO
+                           AND (ESF_CODIGO = LAU_CDESTRFUNC OR ESF_CATEGFUNC = LAU_CATFUNC)
+                           AND ESF_CDEMPRESA = LAU_CDEMPRESA
+                           AND ESF_CODIGO = AEF_CODIGO
+                           AND ESF_CDEMPRESA = AEF_CDEMPRESA
+                           AND ESF_HOMOLOGADO IS NOT NULL
+                           AND AEF_HOMOLOGADO IS NOT NULL
+                           AND APR_STAPROVACAO = 0
+                           AND RAIR.RAIR_SQAPROVACAO = APR_SQAPROVACAO
+                           ----
+                           AND AEF_CDEMPRESA    = DAL_EMPRESA (+) 
+                           AND  AEF_CODIGO       = DAL_ESTRFUNC (+) 
+                           AND DAL_USUORTOGANTE  = LAU_USUARIO  
+                           AND DAL_USUORTOGADO  = USO_CODIGO  
+                           AND TRUNC(DAL_PERIODODE ) <= TRUNC(SYSDATE) 
+                           AND  (TRUNC(DAL_PERIODOATE + 1) >= TRUNC(SYSDATE) OR  DAL_PERIODOATE    IS NULL) 
+                           AND DAL_CANCELADO      IS NULL )
 
                            ) APR
                  WHERE APR.ESF_CDEMPRESA = EMP.EMP_CODIGO
@@ -239,7 +278,7 @@ namespace Service.Services
                    AND RCO.RCO_NUMERO = TCPR_NOPEDCOMPRA (+)
                    AND TCPR.TCPR_CDFOR = FOR_CODIGO (+)
                    AND RCO_NUMERO = APR.RAIR_NUMEROREQ
-                ";
+            ";
             return query;
         }
 

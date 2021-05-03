@@ -1,4 +1,5 @@
-﻿using Data.Handlers;
+﻿using AcessoWebApi.Infrastructure.Security;
+using Data.Handlers;
 using Domain.VO;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -18,15 +19,20 @@ namespace PadraoWebApi.Controllers
     public class GestaoProcessosController : ControllerBase
     {
         private IShoppingService _service;
+        private ICurrentUserAccessor _currentUserAccessor;
 
-        public GestaoProcessosController(IShoppingService service)
+        public GestaoProcessosController(
+            IShoppingService service,
+            ICurrentUserAccessor currentUserAccessor
+        )
         {
             _service = service;
+            _currentUserAccessor = currentUserAccessor;
         }
 
         [HttpPost]
         [Route("/GetAllRequisicoes")]
-        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
+        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithTokenVO<UsuarioVO> bodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -66,7 +72,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetItensRequisicao")]
-        public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
+        public async Task<ActionResult> GetItensRequisicao([FromBody] WithTokenVO<ItensRequisicaoVO> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -86,7 +92,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetAnexosRequisicao")]
-        public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
+        public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithTokenVO<RequisicaoBaseVO> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -105,7 +111,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetDetReqPagamento")]
-        public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
+        public async Task<ActionResult> GetDetReqPagamento([FromBody] WithTokenVO<DetReqPagamentoVO> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -124,7 +130,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/AprovarRequisicao")]
-        public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
+        public async Task<ActionResult> AprovarRequisicao([FromBody] WithTokenVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
             if (!ModelState.IsValid)
             {
@@ -134,8 +140,7 @@ namespace PadraoWebApi.Controllers
             try
             {
                 // TODO Mechi aqui para ajustar o Login
-                LoginVO Login = new LoginVO();
-
+                LoginVO Login = _currentUserAccessor.GetMXMLoginFromToken();
 
                 string url = "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos";
                 var action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegracao";
