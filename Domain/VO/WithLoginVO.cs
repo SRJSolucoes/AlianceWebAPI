@@ -6,7 +6,9 @@ namespace Domain.VO
 {
     public class WithLoginVO<T>
     {
-        public LoginVO Login { get; set; }
+        // TODO Mechi aqui para ajustar o Login
+        //public LoginVO Login { get; set; }
+        public string Tokem { get; set; }
 
         public T Dados { get; set; }
     }

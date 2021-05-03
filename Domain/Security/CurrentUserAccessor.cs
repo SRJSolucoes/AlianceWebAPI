@@ -80,8 +80,9 @@ namespace AcessoWebApi.Infrastructure.Security
             {
                 var bodyString = reader.ReadToEndAsync().Result;
 
-                var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
-                mxmLogin = baseDTO.Login;
+                // TODO Mechi aqui para ajustar o Login
+                //var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
+                //mxmLogin = baseDTO.Login;
             }
             req.Body.Position = 0;
 

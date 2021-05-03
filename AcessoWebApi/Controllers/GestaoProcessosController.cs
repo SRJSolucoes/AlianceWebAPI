@@ -35,6 +35,7 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+
                 return Ok(await _service.GetAllRequisicao(bodyVO.Dados.UsuarioEmail));
             }
             catch (ArgumentException ex)
@@ -132,9 +133,14 @@ namespace PadraoWebApi.Controllers
 
             try
             {
+                // TODO Mechi aqui para ajustar o Login
+                LoginVO Login = new LoginVO();
+
+
                 string url = "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos";
                 var action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegracao";
-                var xmlRetorno = SOAPHelper.PostSOAPRequest(url, action, reqBodyVO.Login, reqBodyVO.Dados);
+                //var xmlRetorno = SOAPHelper.PostSOAPRequest(url, action, reqBodyVO.Login, reqBodyVO.Dados);
+                var xmlRetorno = SOAPHelper.PostSOAPRequest(url, action, Login, reqBodyVO.Dados);
 
                 //var teste = SOAPHelper.GetXMLGenericType<WebServiceReturnTeste>(resposta);
 
