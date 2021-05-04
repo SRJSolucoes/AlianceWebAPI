@@ -28,7 +28,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetAllRequisicoes")]
         public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || bodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             {
                 return BadRequest(ModelState);
             }
@@ -68,7 +68,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetItensRequisicao")]
         public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             {
                 return BadRequest(ModelState);
             }
@@ -88,7 +88,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetAnexosRequisicao")]
         public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             {
                 return BadRequest(ModelState);
             }
@@ -107,7 +107,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetDetReqPagamento")]
         public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             {
                 return BadRequest(ModelState);
             }
@@ -126,7 +126,7 @@ namespace PadraoWebApi.Controllers
         [Route("/AprovarRequisicao")]
         public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
             {
                 return BadRequest(ModelState);
             }
@@ -134,8 +134,12 @@ namespace PadraoWebApi.Controllers
             try
             {
                 // TODO Mechi aqui para ajustar o Login
-                LoginVO Login = new LoginVO();
-
+                LoginVO Login       = new LoginVO();
+                Login.Usuario = "HOM_SHP";
+                Login.Senha = "HOM_SHP";
+                Login.Host = "10.0.100.23";
+                Login.ServiceName = "HOM";
+                Login.Port = "1521";
 
                 string url = "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos";
                 var action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegracao";

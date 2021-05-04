@@ -81,8 +81,12 @@ namespace AcessoWebApi.Infrastructure.Security
                 var bodyString = reader.ReadToEndAsync().Result;
 
                 // TODO Mechi aqui para ajustar o Login
-                //var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
-                //mxmLogin = baseDTO.Login;
+                var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
+                mxmLogin.Usuario = "HOM_SHP";
+                mxmLogin.Senha = "HOM_SHP";
+                mxmLogin.Host = "10.0.100.23";
+                mxmLogin.ServiceName = "HOM";
+                mxmLogin.Port = "1521";
             }
             req.Body.Position = 0;
 
