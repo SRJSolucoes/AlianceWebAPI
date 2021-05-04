@@ -82,11 +82,14 @@ namespace AcessoWebApi.Infrastructure.Security
 
                 // TODO Mechi aqui para ajustar o Login
                 var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
-                mxmLogin.Usuario = "HOM_SHP";
-                mxmLogin.Senha = "HOM_SHP";
-                mxmLogin.Host = "10.0.100.23";
-                mxmLogin.ServiceName = "HOM";
-                mxmLogin.Port = "1521";
+                mxmLogin = new LoginVO()
+                {
+                    Usuario = "HOM_SHP",
+                    Senha = "HOM_SHP",
+                    Host = "10.0.100.23",
+                    ServiceName = "HOM",
+                    Port = "1521"
+                };
             }
             req.Body.Position = 0;
 

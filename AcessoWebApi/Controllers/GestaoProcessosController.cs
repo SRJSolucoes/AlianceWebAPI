@@ -19,6 +19,8 @@ namespace PadraoWebApi.Controllers
     {
         private IShoppingService _service;
 
+        private string defaultToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+
         public GestaoProcessosController(IShoppingService service)
         {
             _service = service;
@@ -28,7 +30,12 @@ namespace PadraoWebApi.Controllers
         [Route("/GetAllRequisicoes")]
         public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
         {
-            if (!ModelState.IsValid || bodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
+            if (bodyVO.Token != defaultToken)
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -68,11 +75,16 @@ namespace PadraoWebApi.Controllers
         [Route("/GetItensRequisicao")]
         public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
         {
-            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
+
+            if (reqBodyVO.Token != defaultToken)
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
 
             try
             {
@@ -88,7 +100,12 @@ namespace PadraoWebApi.Controllers
         [Route("/GetAnexosRequisicao")]
         public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
         {
-            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
+            if (reqBodyVO.Token != defaultToken)
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -107,7 +124,12 @@ namespace PadraoWebApi.Controllers
         [Route("/GetDetReqPagamento")]
         public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
         {
-            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
+            if (reqBodyVO.Token != defaultToken)
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
@@ -126,7 +148,12 @@ namespace PadraoWebApi.Controllers
         [Route("/AprovarRequisicao")]
         public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
-            if (!ModelState.IsValid || reqBodyVO.Tokem != "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c")
+            if (reqBodyVO.Token != defaultToken)
+            {
+                return Unauthorized();
+            }
+
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
