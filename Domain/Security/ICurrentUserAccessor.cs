@@ -13,5 +13,6 @@ namespace AcessoWebApi.Infrastructure.Security
         string GetCurrentUserRole();
         LoginVO GetMXMLoginFromRequestBody();
         LoginVO GetMXMLoginFromRequestHeaderBasic();
+        LoginVO GetMXMLoginFromToken();
     }
 }

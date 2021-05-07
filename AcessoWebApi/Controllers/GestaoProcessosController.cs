@@ -1,5 +1,6 @@
-﻿using Data.Handlers;
+using Data.Handlers;
 using Domain.Config;
+using AcessoWebApi.Infrastructure.Security;
 using Domain.VO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -21,18 +22,24 @@ namespace PadraoWebApi.Controllers
     {
         private IShoppingService _service;
         private AlianceApiSettings _appSettings;
+        private ICurrentUserAccessor _currentUserAccessor;
 
         //private string defaultToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
-        public GestaoProcessosController(IShoppingService service, IOptions<AlianceApiSettings>  appSettings)
+        public GestaoProcessosController(
+            IShoppingService service,
+            ICurrentUserAccessor currentUserAccessor,
+            IOptions<AlianceApiSettings>  appSettings
+        )
         {
             _service = service;
+            _currentUserAccessor = currentUserAccessor;            
             _appSettings = appSettings.Value;
         }
 
         [HttpPost]
         [Route("/GetAllRequisicoes")]
-        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
+        public async Task<ActionResult> GetAllRequisicoes([FromBody] WithTokenVO<UsuarioVO> bodyVO)
         {
             if (bodyVO.Token != _appSettings.TokenDefault)
             {
@@ -77,7 +84,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetItensRequisicao")]
-        public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
+        public async Task<ActionResult> GetItensRequisicao([FromBody] WithTokenVO<ItensRequisicaoVO> reqBodyVO)
         {
 
             if (reqBodyVO.Token != _appSettings.TokenDefault)
@@ -102,7 +109,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetAnexosRequisicao")]
-        public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
+        public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithTokenVO<RequisicaoBaseVO> reqBodyVO)
         {
             if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
@@ -126,7 +133,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/GetDetReqPagamento")]
-        public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
+        public async Task<ActionResult> GetDetReqPagamento([FromBody] WithTokenVO<DetReqPagamentoVO> reqBodyVO)
         {
             if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
@@ -150,7 +157,7 @@ namespace PadraoWebApi.Controllers
 
         [HttpPost]
         [Route("/AprovarRequisicao")]
-        public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
+        public async Task<ActionResult> AprovarRequisicao([FromBody] WithTokenVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
             if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
@@ -164,7 +171,9 @@ namespace PadraoWebApi.Controllers
 
             try
             {
-                // TODO Mechi aqui para ajustar o Login
+                // TODO Falta terminar a implementação
+                // LoginVO Login = _currentUserAccessor.GetMXMLoginFromToken();
+
                 LoginVO Login = new LoginVO()
                 {
                     Usuario = _appSettings.DatabaseConfig.Usuario,
