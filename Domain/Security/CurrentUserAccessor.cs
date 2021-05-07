@@ -9,6 +9,8 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using Domain.VO;
+using Microsoft.Extensions.Options;
+using Domain.Config;
 
 namespace AcessoWebApi.Infrastructure.Security
 {
@@ -16,9 +18,15 @@ namespace AcessoWebApi.Infrastructure.Security
     {
         private readonly IHttpContextAccessor _accessor;
 
-        public CurrentUserAccessor(IHttpContextAccessor accessor)
+        private AlianceApiSettings _appSettings;
+
+        public CurrentUserAccessor(
+            IHttpContextAccessor accessor,
+             IOptions<AlianceApiSettings> appSettings
+            )
         {
             _accessor = accessor;
+            _appSettings = appSettings.Value;
         }
 
         public IEnumerable<Claim> GetClaimsIdentity()
@@ -84,11 +92,11 @@ namespace AcessoWebApi.Infrastructure.Security
                 var baseDTO = JsonConvert.DeserializeObject<WithLoginVO<Object>>(bodyString);
                 mxmLogin = new LoginVO()
                 {
-                    Usuario = "HOM_SHP",
-                    Senha = "HOM_SHP",
-                    Host = "10.0.100.23",
-                    ServiceName = "HOM",
-                    Port = "1521"
+                    Usuario = _appSettings.DatabaseConfig.Usuario,
+                    Senha = _appSettings.DatabaseConfig.Senha,
+                    Host = _appSettings.DatabaseConfig.Host,
+                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
+                    Port = _appSettings.DatabaseConfig.Port
                 };
             }
             req.Body.Position = 0;

@@ -1,11 +1,13 @@
 ﻿using AcessoWebApi.Infrastructure.Security;
 using Data.FluentySession;
 using Data.Handlers;
+using Domain.Config;
 using Domain.Entidades;
 using Domain.Enum;
 using Domain.Enum.Core;
 using Domain.Interfaces;
 using Domain.Models;
+using Microsoft.Extensions.Options;
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
@@ -25,13 +27,25 @@ namespace Data.Repository
         //private readonly Func<string, ISession> _session;
         private readonly ISession _session;
         private readonly ICurrentUserAccessor _currentUserAccessor;
+        private AlianceApiSettings _appSettings;
 
         public RepositoryBase(
             Func<string, ISession> session,
-            ICurrentUserAccessor currentUserAccessor
+            ICurrentUserAccessor currentUserAccessor,
+            IOptions<AlianceApiSettings> appSettings
         )
         {
-            var sessaoDefault = session("Acesso");
+            _appSettings = appSettings.Value;
+            var dbConfig = _appSettings.DatabaseConfig;
+
+            ISession sessaoDefault = null;
+            var configDefault = SessionFact.GetSessionFact(dbConfig.Usuario, dbConfig.Senha, dbConfig.ServiceName, dbConfig.Host, dbConfig.Port);
+            if (configDefault != null)
+            {
+                sessaoDefault = configDefault.OpenSession();
+            }
+
+            //var sessaoDefault = session("Acesso");
             ISession sessaoCustomizada = null;
 
             var userFromBody = currentUserAccessor.GetMXMLoginFromRequestBody();

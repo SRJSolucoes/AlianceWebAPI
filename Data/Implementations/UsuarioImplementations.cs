@@ -1,9 +1,11 @@
 ﻿using AcessoWebApi.Infrastructure.Security;
 using Data.Repository;
+using Domain.Config;
 using Domain.Entidades;
 using Domain.Interfaces;
 using Domain.Repository;
 using Domain.Security;
+using Microsoft.Extensions.Options;
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
@@ -21,12 +23,23 @@ namespace Data.Implementations
 
         private readonly IPasswordHasher _passwordHasher;
         private readonly ICurrentUserAccessor _currentUserAccessor;
+        private AlianceApiSettings _appSettings;
 
-        public UsuarioImplementations(Func<string, ISession> _session, IPasswordHasher _passwordHasher, ICurrentUserAccessor _currentUserAccessor) : base(_session, _currentUserAccessor)
+        public UsuarioImplementations(
+            Func<string, ISession> _session, 
+            IPasswordHasher _passwordHasher, 
+            ICurrentUserAccessor _currentUserAccessor,
+             IOptions<AlianceApiSettings> appSettings
+            ) : base(
+                _session, 
+                _currentUserAccessor,
+                appSettings)
         {
             this._session = _session;
             this._passwordHasher = _passwordHasher;
             this._currentUserAccessor = _currentUserAccessor;
+            
+            _appSettings = appSettings.Value;
         }
 
         public async Task<Usuario> FindByLogin(Guid Idparceiro, string email, string senha)

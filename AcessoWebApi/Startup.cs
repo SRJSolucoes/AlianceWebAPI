@@ -2,6 +2,7 @@
 using Cross.Cutting.DependencyInjection;
 using Cross.Cutting.Mapping;
 using Data.Handlers;
+using Domain.Config;
 using Domain.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -17,6 +18,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using PadraoWebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,18 +27,22 @@ namespace AcessoWebApi
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment HostingEnvironment { get; private set; }
+        public IConfiguration Configuration { get; private set; }
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            Configuration = configuration;
+            this.HostingEnvironment = env;
+            this.Configuration = configuration;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // Injeção de Dependência
-           
+            var settingsSection = Configuration.GetSection("AlianceApiSettings");
+            services.Configure<AlianceApiSettings>(settingsSection);
+
             ConfigureRepository.ConfigureDependenceRepository(services);
             ConfigureService.ConfigureDependenceInjection(services);
 

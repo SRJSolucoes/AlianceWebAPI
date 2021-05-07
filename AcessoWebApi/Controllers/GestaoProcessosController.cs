@@ -1,6 +1,8 @@
 ﻿using Data.Handlers;
+using Domain.Config;
 using Domain.VO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using PadraoWebApi.Helpers;
 using PadraoWebApi.XML;
@@ -18,19 +20,21 @@ namespace PadraoWebApi.Controllers
     public class GestaoProcessosController : ControllerBase
     {
         private IShoppingService _service;
+        private AlianceApiSettings _appSettings;
 
-        private string defaultToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+        //private string defaultToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
-        public GestaoProcessosController(IShoppingService service)
+        public GestaoProcessosController(IShoppingService service, IOptions<AlianceApiSettings>  appSettings)
         {
             _service = service;
+            _appSettings = appSettings.Value;
         }
 
         [HttpPost]
         [Route("/GetAllRequisicoes")]
         public async Task<ActionResult> GetAllRequisicoes([FromBody] WithLoginVO<UsuarioVO> bodyVO)
         {
-            if (bodyVO.Token != defaultToken)
+            if (bodyVO.Token != _appSettings.TokenDefault)
             {
                 return Unauthorized();
             }
@@ -76,7 +80,7 @@ namespace PadraoWebApi.Controllers
         public async Task<ActionResult> GetItensRequisicao([FromBody] WithLoginVO<ItensRequisicaoVO> reqBodyVO)
         {
 
-            if (reqBodyVO.Token != defaultToken)
+            if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
                 return Unauthorized();
             }
@@ -100,7 +104,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetAnexosRequisicao")]
         public async Task<ActionResult> GetAnexosRequisicao([FromBody] WithLoginVO<RequisicaoBaseVO> reqBodyVO)
         {
-            if (reqBodyVO.Token != defaultToken)
+            if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
                 return Unauthorized();
             }
@@ -124,7 +128,7 @@ namespace PadraoWebApi.Controllers
         [Route("/GetDetReqPagamento")]
         public async Task<ActionResult> GetDetReqPagamento([FromBody] WithLoginVO<DetReqPagamentoVO> reqBodyVO)
         {
-            if (reqBodyVO.Token != defaultToken)
+            if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
                 return Unauthorized();
             }
@@ -148,7 +152,7 @@ namespace PadraoWebApi.Controllers
         [Route("/AprovarRequisicao")]
         public async Task<ActionResult> AprovarRequisicao([FromBody] WithLoginVO<List<AprovacaoPendenteVO>> reqBodyVO)
         {
-            if (reqBodyVO.Token != defaultToken)
+            if (reqBodyVO.Token != _appSettings.TokenDefault)
             {
                 return Unauthorized();
             }
@@ -161,14 +165,18 @@ namespace PadraoWebApi.Controllers
             try
             {
                 // TODO Mechi aqui para ajustar o Login
-                LoginVO Login       = new LoginVO();
-                Login.Usuario = "HOM_SHP";
-                Login.Senha = "HOM_SHP";
-                Login.Host = "10.0.100.23";
-                Login.ServiceName = "HOM";
-                Login.Port = "1521";
+                LoginVO Login = new LoginVO()
+                {
+                    Usuario = _appSettings.DatabaseConfig.Usuario,
+                    Senha = _appSettings.DatabaseConfig.Senha,
+                    Host = _appSettings.DatabaseConfig.Host,
+                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
+                    Port = _appSettings.DatabaseConfig.Port
+                };
 
-                string url = "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos";
+
+                //string url = "https://192.168.100.36/webservicemxm/MXMWS_GestaoDeProcessos.exe/soap/IMXMWS_GestaoDeProcessos";
+                string url = _appSettings.WSGestaoProcessosettings.Url;
                 var action = "urn:MXMWS_GestaoDeProcessosIntf-IMXMWS_GestaoDeProcessos#AprovacoesProcessaIntegracao";
                 //var xmlRetorno = SOAPHelper.PostSOAPRequest(url, action, reqBodyVO.Login, reqBodyVO.Dados);
                 var xmlRetorno = SOAPHelper.PostSOAPRequest(url, action, Login, reqBodyVO.Dados);
