@@ -25,11 +25,13 @@ namespace Domain.Config
 
     public class ControleApiSettings
     {
+        public bool Active { get; set; }
         public string HostApi { get; set; }
         public string ConsumerKey { get; set; }
         public string ConsumerSecret { get; set; }
         public string TokenSecret { get; set; }
         public string TokenValue { get; set; }
+        public string UserID { get; set; }
     }
 
     public class WSGestaoProcessosettings

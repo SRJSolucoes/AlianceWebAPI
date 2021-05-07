@@ -145,7 +145,10 @@ namespace AcessoWebApi.Infrastructure.Security
 
                 var baseDTO = JsonConvert.DeserializeObject<WithTokenVO<Object>>(bodyString);
 
-                mxmLogin = getCredentialsFromToken(baseDTO.Token);
+                if (_appSettings.ControleApiSettings.Active)
+                {
+                    mxmLogin = getCredentialsFromToken(baseDTO.Token);
+                }
             }
             req.Body.Position = 0;
 
@@ -154,12 +157,12 @@ namespace AcessoWebApi.Infrastructure.Security
 
         private LoginVO getCredentialsFromToken(string Token)
         {
-            const string consumerKey = "";
-            const string consumerSecret = "";
-            const string tokenSecret = "";
-            const string tokenValue = "";
-            const string host = "https://192.168.100.85";
-            string UserID = "664";
+            string consumerKey = _appSettings.ControleApiSettings.ConsumerKey;
+            string consumerSecret = _appSettings.ControleApiSettings.ConsumerSecret;
+            string tokenSecret = _appSettings.ControleApiSettings.TokenSecret;
+            string tokenValue = _appSettings.ControleApiSettings.TokenValue;
+            string host = _appSettings.ControleApiSettings.HostApi;
+            string UserID = _appSettings.ControleApiSettings.UserID;
 
             string url = $@"{host}/iso/coe/senha/{UserID}";
 
