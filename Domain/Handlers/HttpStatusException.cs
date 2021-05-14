@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Data.Handlers
+namespace Domain.Handlers
 {
     public class HttpStatusException : Exception
     {

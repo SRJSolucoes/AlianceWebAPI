@@ -1,12 +1,9 @@
-using Data.Handlers;
 using Domain.Config;
 using AcessoWebApi.Infrastructure.Security;
 using Domain.VO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
 using PadraoWebApi.Helpers;
-using PadraoWebApi.XML;
 using Service.Interfaces;
 using System;
 using System.Collections.Generic;

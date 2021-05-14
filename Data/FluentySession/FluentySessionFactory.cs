@@ -1,4 +1,4 @@
-﻿using Data.Handlers;
+﻿using Domain.Handlers;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;

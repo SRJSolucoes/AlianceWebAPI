@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Data.Handlers;
 using Domain.DTOs;
 using Domain.Entidades;
+using Domain.Handlers;
 using Domain.Interfaces;
 using NHibernate;
 using Oracle.ManagedDataAccess.Client;

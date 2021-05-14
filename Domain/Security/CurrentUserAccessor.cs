@@ -13,6 +13,8 @@ using Microsoft.Extensions.Options;
 using Domain.Config;
 using System.Net;
 using System.Security.Cryptography;
+using System.Net.Http;
+using Domain.Handlers;
 
 namespace AcessoWebApi.Infrastructure.Security
 {
@@ -177,8 +179,22 @@ namespace AcessoWebApi.Infrastructure.Security
                 }
                 return escaped.ToString();
             }
+
+            //var EndPoint = "https://192.168.0.1/api";
+            //var httpClientHandler = new HttpClientHandler();
+            //httpClientHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) =>
+            //{
+            //    return true;
+            //};
+            //var httpClient = new HttpClient(httpClientHandler) { BaseAddress = new Uri(EndPoint) };
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpWebRequest.ServerCertificateValidationCallback = (message, cert, chain, sslPolicyErrors) =>
+            {
+                return true;
+            };
             httpWebRequest.Method = "GET";
+
+            var testeURI = "https://10.1.104.50/iso/coe/senha/664?oauth_consumer_key=dd4445285faaf5bdcfc322048a8a83ee06089aef6&oauth_token=2a540e205f6dd29a88f7f004f4dee1d806089b049&oauth_signature_method=PLAINTEXT&oauth_timestamp=1620963755&oauth_nonce=lPXgUk0JOi4&oauth_version=1.0&oauth_signature=447713801ec2f37310b7431c3e416e37%2600d7a35af3b13e1d4135b1841b1b3d89";
 
             var timeStamp = ((int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds).ToString();
             var nonce = Convert.ToBase64String(Encoding.UTF8.GetBytes(timeStamp));
@@ -231,14 +247,40 @@ namespace AcessoWebApi.Infrastructure.Security
             {
                 throw new ArgumentNullException(nameof(characterSet));
             }
+            string result;
             using (responsestream)
             {
                 var reader = new StreamReader(responsestream, responseEncoding);
-                var result = reader.ReadToEnd();
+                result = reader.ReadToEnd();
                 Console.WriteLine(@"result: " + result);
             }
 
-            return new LoginVO();
+            if (!String.IsNullOrWhiteSpace(result))
+            {
+                var controleResponse = JsonConvert.DeserializeObject<ControleAPIResponseVO>(result);
+
+                var bdConfig = new LoginVO() {
+                    Host = _appSettings.DatabaseConfig.Host,
+                    Port = _appSettings.DatabaseConfig.Port,
+                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
+                    Usuario = controleResponse.Senha.Username,
+                    Senha = controleResponse.Senha.Senha
+                };
+
+                if (_appSettings.ControleApiSettings.ForcedDB)
+                {
+                    bdConfig.Host = _appSettings.ControleApiSettings.ForcedDBHost;
+                    bdConfig.Port = _appSettings.ControleApiSettings.ForcedDBPort;
+                    bdConfig.ServiceName = _appSettings.ControleApiSettings.ForcedDBServiceName;
+                }
+
+                return bdConfig;
+            }
+            else
+            {
+                throw new HttpStatusException(HttpStatusCode.InternalServerError, "Não foi possivel obter as informações da API de Controle");
+            }
+
         }
     }
 }

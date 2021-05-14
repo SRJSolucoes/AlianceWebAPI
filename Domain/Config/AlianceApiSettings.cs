@@ -30,8 +30,13 @@ namespace Domain.Config
         public string ConsumerKey { get; set; }
         public string ConsumerSecret { get; set; }
         public string TokenSecret { get; set; }
+        // Access Token
         public string TokenValue { get; set; }
         public string UserID { get; set; }
+        public bool ForcedDB { get; set; }
+        public string ForcedDBHost { get; set; }
+        public string ForcedDBServiceName { get; set; }
+        public string ForcedDBPort { get; set; }
     }
 
     public class WSGestaoProcessosettings

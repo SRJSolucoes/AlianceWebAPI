@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using Cross.Cutting.DependencyInjection;
 using Cross.Cutting.Mapping;
-using Data.Handlers;
 using Domain.Config;
+using Domain.Handlers;
 using Domain.Security;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -13,15 +11,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using PadraoWebApi;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace AcessoWebApi
 {
