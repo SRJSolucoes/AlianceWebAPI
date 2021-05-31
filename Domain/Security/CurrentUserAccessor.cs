@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Linq;
-using Domain.DTOs;
+using Domain.Config;
+using Microsoft.Extensions.Options;
+using Domain.VO;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
-using Domain.VO;
-using Microsoft.Extensions.Options;
-using Domain.Config;
-using System.Net;
-using System.Security.Cryptography;
 using System.Net.Http;
+using System.Security.Cryptography;
 using Domain.Handlers;
+using System.Net;
+using Microsoft.Extensions.Configuration;
 
 namespace AcessoWebApi.Infrastructure.Security
 {
@@ -26,13 +26,14 @@ namespace AcessoWebApi.Infrastructure.Security
 
         public CurrentUserAccessor(
             IHttpContextAccessor accessor,
-             IOptions<AlianceApiSettings> appSettings
+            IOptionsSnapshot<AlianceApiSettings> appSettings,
+            IConfiguration configuration
             )
         {
             _accessor = accessor;
             _appSettings = appSettings.Value;
+            AlianceApiSettings.ConfigurarSoDatabaseVariables(_appSettings, configuration);
         }
-
         public IEnumerable<Claim> GetClaimsIdentity()
         {
             return _accessor.HttpContext.User.Claims;
@@ -97,11 +98,11 @@ namespace AcessoWebApi.Infrastructure.Security
                 // mxmLogin = baseDTO.Login;
                 mxmLogin = new LoginVO()
                 {
-                    Usuario = _appSettings.DatabaseConfig.Usuario,
-                    Senha = _appSettings.DatabaseConfig.Senha,
-                    Host = _appSettings.DatabaseConfig.Host,
-                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
-                    Port = _appSettings.DatabaseConfig.Port
+                    Usuario = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Usuario : _appSettings.DatabaseConfig.Usuario,
+                    Senha = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Senha : _appSettings.DatabaseConfig.Senha,
+                    Host = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Host : _appSettings.DatabaseConfig.Host,
+                    ServiceName = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.ServiceName : _appSettings.DatabaseConfig.ServiceName,
+                    Port = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Port : _appSettings.DatabaseConfig.Port
                 };
             }
             req.Body.Position = 0;
@@ -180,26 +181,28 @@ namespace AcessoWebApi.Infrastructure.Security
                 return escaped.ToString();
             }
 
-            //var EndPoint = "https://192.168.0.1/api";
-            //var httpClientHandler = new HttpClientHandler();
+            var httpClientHandler = new HttpClientHandler();
+            httpClientHandler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
             //httpClientHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) =>
             //{
             //    return true;
             //};
-            //var httpClient = new HttpClient(httpClientHandler) { BaseAddress = new Uri(EndPoint) };
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            httpWebRequest.ServerCertificateValidationCallback = (message, cert, chain, sslPolicyErrors) =>
-            {
-                return true;
-            };
-            httpWebRequest.Method = "GET";
+            var httpClient = new HttpClient(httpClientHandler);
+            //ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            //ServicePointManager.ServerCertificateValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+            //var httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            //httpWebRequest.ServerCertificateValidationCallback = (message, cert, chain, sslPolicyErrors) =>
+            //{
+            //    return true;
+            //};
+            //httpWebRequest.Method = "GET";
 
-            var testeURI = "https://10.1.104.50/iso/coe/senha/664?oauth_consumer_key=dd4445285faaf5bdcfc322048a8a83ee06089aef6&oauth_token=2a540e205f6dd29a88f7f004f4dee1d806089b049&oauth_signature_method=PLAINTEXT&oauth_timestamp=1620963755&oauth_nonce=lPXgUk0JOi4&oauth_version=1.0&oauth_signature=447713801ec2f37310b7431c3e416e37%2600d7a35af3b13e1d4135b1841b1b3d89";
+            //var testeURI = "https://10.1.104.50/iso/coe/senha/664?oauth_consumer_key=dd4445285faaf5bdcfc322048a8a83ee06089aef6&oauth_token=2a540e205f6dd29a88f7f004f4dee1d806089b049&oauth_signature_method=PLAINTEXT&oauth_timestamp=1620963755&oauth_nonce=lPXgUk0JOi4&oauth_version=1.0&oauth_signature=447713801ec2f37310b7431c3e416e37%2600d7a35af3b13e1d4135b1841b1b3d89";
 
             var timeStamp = ((int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds).ToString();
             var nonce = Convert.ToBase64String(Encoding.UTF8.GetBytes(timeStamp));
 
-            var signatureBaseString = Escape(httpWebRequest.Method.ToUpper()) + "&";
+            var signatureBaseString = Escape("GET") + "&";
             signatureBaseString += Uri.EscapeDataString(url.ToLower()) + "&";
             signatureBaseString += Uri.EscapeDataString(
                 "oauth_consumer_key=" + Uri.EscapeDataString(consumerKey) + "&" +
@@ -235,36 +238,40 @@ namespace AcessoWebApi.Infrastructure.Security
                 "oauth_version=" + SimpleQuote("1.0") + "," +
                 "oauth_signature= " + SimpleQuote(signatureString);
             Console.WriteLine(@"header: " + header);
-            httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, header);
+            //httpWebRequest.Headers.Add(HttpRequestHeader.Authorization, header);
+            httpClient.DefaultRequestHeaders.Add("Authorization", header);
 
-            var response = httpWebRequest.GetResponse();
-            var characterSet = ((HttpWebResponse)response).CharacterSet;
-            var responseEncoding = characterSet == ""
-                ? Encoding.UTF8
-                : Encoding.GetEncoding(characterSet ?? "utf-8");
-            var responsestream = response.GetResponseStream();
-            if (responsestream == null)
-            {
-                throw new ArgumentNullException(nameof(characterSet));
-            }
-            string result;
-            using (responsestream)
-            {
-                var reader = new StreamReader(responsestream, responseEncoding);
-                result = reader.ReadToEnd();
-                Console.WriteLine(@"result: " + result);
-            }
+            //var response = httpWebRequest.GetResponse();
+            var response = httpClient.GetStringAsync(url).Result;
+            //var characterSet = ((HttpWebResponse)response).CharacterSet;
+            //var responseEncoding = characterSet == ""
+            //    ? Encoding.UTF8
+            //    : Encoding.GetEncoding(characterSet ?? "utf-8");
+            //var responsestream = response.GetResponseStream();
+            //if (responsestream == null)
+            //{
+            //    throw new ArgumentNullException(nameof(characterSet));
+            //}
+            //string result;
+            //using (responsestream)
+            //{
+            //    var reader = new StreamReader(responsestream, responseEncoding);
+            //    result = reader.ReadToEnd();
+            //    Console.WriteLine(@"result: " + result);
+            //}
+            Console.WriteLine(@"result: " + response);
 
-            if (!String.IsNullOrWhiteSpace(result))
+            if (!String.IsNullOrWhiteSpace(response))
             {
-                var controleResponse = JsonConvert.DeserializeObject<ControleAPIResponseVO>(result);
+                var controleResponse = JsonConvert.DeserializeObject<ControleAPIResponseVO>(response);
 
-                var bdConfig = new LoginVO() {
-                    Host = _appSettings.DatabaseConfig.Host,
-                    Port = _appSettings.DatabaseConfig.Port,
-                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
-                    Usuario = controleResponse.Senha.Username,
-                    Senha = controleResponse.Senha.Senha
+                var bdConfig = new LoginVO()
+                {
+                    Usuario = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Usuario : controleResponse.Senha.Username,
+                    Senha = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Senha : controleResponse.Senha.Senha,
+                    Host = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Host : _appSettings.DatabaseConfig.Host,
+                    ServiceName = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.ServiceName : _appSettings.DatabaseConfig.ServiceName,
+                    Port = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Port : _appSettings.DatabaseConfig.Port
                 };
 
                 if (_appSettings.ControleApiSettings.ForcedDB)

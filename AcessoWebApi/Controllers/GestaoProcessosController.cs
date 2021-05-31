@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.Configuration;
 
 namespace PadraoWebApi.Controllers
 {
@@ -26,12 +26,14 @@ namespace PadraoWebApi.Controllers
         public GestaoProcessosController(
             IShoppingService service,
             ICurrentUserAccessor currentUserAccessor,
-            IOptions<AlianceApiSettings>  appSettings
+            IOptionsSnapshot<AlianceApiSettings>  appSettings,
+            IConfiguration configuration
         )
         {
             _service = service;
             _currentUserAccessor = currentUserAccessor;            
             _appSettings = appSettings.Value;
+            AlianceApiSettings.ConfigurarSoDatabaseVariables(_appSettings, configuration);
         }
 
         [HttpPost]
@@ -173,11 +175,11 @@ namespace PadraoWebApi.Controllers
 
                 LoginVO Login = new LoginVO()
                 {
-                    Usuario = _appSettings.DatabaseConfig.Usuario,
-                    Senha = _appSettings.DatabaseConfig.Senha,
-                    Host = _appSettings.DatabaseConfig.Host,
-                    ServiceName = _appSettings.DatabaseConfig.ServiceName,
-                    Port = _appSettings.DatabaseConfig.Port
+                    Usuario = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Usuario : _appSettings.DatabaseConfig.Usuario,
+                    Senha = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Senha : _appSettings.DatabaseConfig.Senha,
+                    Host = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Host : _appSettings.DatabaseConfig.Host,
+                    ServiceName = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.ServiceName : _appSettings.DatabaseConfig.ServiceName,
+                    Port = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Port : _appSettings.DatabaseConfig.Port
                 };
 
 

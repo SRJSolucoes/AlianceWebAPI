@@ -5,6 +5,7 @@ using Domain.Entidades;
 using Domain.Interfaces;
 using Domain.Repository;
 using Domain.Security;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NHibernate;
 using NHibernate.Criterion;
@@ -29,11 +30,14 @@ namespace Data.Implementations
             Func<string, ISession> _session, 
             IPasswordHasher _passwordHasher, 
             ICurrentUserAccessor _currentUserAccessor,
-             IOptions<AlianceApiSettings> appSettings
+            IOptionsSnapshot<AlianceApiSettings> appSettings,
+            IConfiguration configuration
             ) : base(
                 _session, 
                 _currentUserAccessor,
-                appSettings)
+                appSettings,
+                configuration
+           )
         {
             this._session = _session;
             this._passwordHasher = _passwordHasher;

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace AcessoWebApi
         {
             // Injeção de Dependência
             var settingsSection = Configuration.GetSection("AlianceApiSettings");
+            ConfigurarSoDatabaseVariables(settingsSection);
             services.Configure<AlianceApiSettings>(settingsSection);
 
             ConfigureRepository.ConfigureDependenceRepository(services);
@@ -131,6 +133,15 @@ namespace AcessoWebApi
 
             services.AddControllers()
                 .AddNewtonsoftJson();
+        }
+
+        private void ConfigurarSoDatabaseVariables(IConfigurationSection settingsSection)
+        {
+            settingsSection["DatabaseConfigFromSO:Usuario"] = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Usuario").Value).Value;
+            settingsSection["DatabaseConfigFromSO:Senha"] = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Senha").Value).Value;
+            settingsSection["DatabaseConfigFromSO:Host"] = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Host").Value).Value;
+            settingsSection["DatabaseConfigFromSO:ServiceName"] = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:ServiceName").Value).Value;
+            settingsSection["DatabaseConfigFromSO:Port"] = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Port").Value).Value;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,8 +10,19 @@ namespace Domain.Config
     {
         public string TokenDefault { get; set; }
         public DatabaseConfig DatabaseConfig { get; set; }
+        public DatabaseConfigFromSO DatabaseConfigFromSO { get; set; }
+        public SODatabaseVariables SODatabaseVariables { get; set; }
         public ControleApiSettings ControleApiSettings { get; set; }
         public WSGestaoProcessosettings WSGestaoProcessosettings { get; set; }
+
+        public static void ConfigurarSoDatabaseVariables(AlianceApiSettings settings, IConfiguration Configuration)
+        {
+            settings.DatabaseConfigFromSO.Usuario = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Usuario").Value).Value;
+            settings.DatabaseConfigFromSO.Senha = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Senha").Value).Value;
+            settings.DatabaseConfigFromSO.Host = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Host").Value).Value;
+            settings.DatabaseConfigFromSO.ServiceName = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:ServiceName").Value).Value;
+            settings.DatabaseConfigFromSO.Port = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Port").Value).Value;
+        }
 
     }
 
@@ -22,6 +34,20 @@ namespace Domain.Config
         public string ServiceName { get; set; }
         public string Port { get; set; }
     }
+
+    public class DatabaseConfigFromSO : DatabaseConfig
+    {
+    }
+    public class SODatabaseVariables
+    {
+        public bool ActiveDBfromSO { get; set; }
+        public string Usuario { get; set; }
+        public string Senha { get; set; }
+        public string Host { get; set; }
+        public string ServiceName { get; set; }
+        public string Port { get; set; }
+    }
+
 
     public class ControleApiSettings
     {

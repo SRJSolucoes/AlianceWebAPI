@@ -4,6 +4,7 @@ using Domain.Config;
 using Domain.Entidades;
 using Domain.Handlers;
 using Domain.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using NHibernate;
 using NHibernate.Linq;
@@ -26,11 +27,13 @@ namespace Data.Repository
         public RepositoryBase(
             Func<string, ISession> session,
             ICurrentUserAccessor currentUserAccessor,
-            IOptions<AlianceApiSettings> appSettings
+            IOptionsSnapshot<AlianceApiSettings> appSettings,
+            IConfiguration configuration
         )
         {
             _appSettings = appSettings.Value;
-            var dbConfig = _appSettings.DatabaseConfig;
+            AlianceApiSettings.ConfigurarSoDatabaseVariables(_appSettings, configuration);
+            var dbConfig = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO : _appSettings.DatabaseConfig;
 
             ISession sessaoDefault = null;
             var configDefault = SessionFact.GetSessionFact(dbConfig.Usuario, dbConfig.Senha, dbConfig.ServiceName, dbConfig.Host, dbConfig.Port);
@@ -94,7 +97,6 @@ namespace Data.Repository
             this._session = sessaoAtual;
             this._currentUserAccessor = currentUserAccessor;
         }
-
         public async Task<T> InsertAsync(T item)
         {
             using (var transaction = _session.BeginTransaction())
