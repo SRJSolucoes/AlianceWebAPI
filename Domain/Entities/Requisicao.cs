@@ -19,8 +19,8 @@ namespace Domain.Entidades
         public virtual String DS_TipoReq { get; set; }
         public virtual String Setor { get; set; }
         public virtual String Requisitante { get; set; }
-        public virtual String Posicao_Funcional { get; set; }
-        public virtual String DSPosicao_Funcional { get; set; }
+        //public virtual String Posicao_Funcional { get; set; }
+        //public virtual String DSPosicao_Funcional { get; set; }
         public virtual String Observacao { get; set; }
         public virtual DateTime DataMov { get; set; }
         public virtual String Etape { get; set; }
@@ -43,7 +43,7 @@ namespace Domain.Entidades
         public virtual Double Valor_Total { get; set; }
         public virtual Int64 SqAprovacao { get; set; }
         public virtual Int64 SqItemLinhaAprov { get; set; }
-        public virtual String Cat_Funcional { get; set; }
+        //public virtual String Cat_Funcional { get; set; }
         public virtual Int64 SqItemAprovacao { get; set; }
         public virtual String Usuario_Aprovador { get; set; }
 

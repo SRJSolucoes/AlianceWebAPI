@@ -7,7 +7,7 @@ namespace Domain.Entidades
 {
     public class AnexoRequisicao : EntidadeBase
     {
-        public virtual int Id { get; set; }
+        //public virtual int Id { get; set; }
         public virtual String ReqNumero { get; set; }
         public virtual Decimal Codigo { get; set; }
         public virtual byte[] Anexo { get; set; }

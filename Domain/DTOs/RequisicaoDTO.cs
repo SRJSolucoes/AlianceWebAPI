@@ -20,9 +20,9 @@ namespace Domain.DTOs
         public String DS_TipoReq { get; set; }
         public String Setor { get; set; }
         public String Requisitante { get; set; }
-        public String Cat_Funcional { get; set; }
-        public String Posicao_Funcional { get; set; }
-        public String DSPosicao_Funcional { get; set; }
+        //public String Cat_Funcional { get; set; }
+        //public String Posicao_Funcional { get; set; }
+        //public String DSPosicao_Funcional { get; set; }
         public String Observacao { get; set; }
         public DateTime DataMov { get; set; }
         public String Etape { get; set; }

@@ -21,8 +21,8 @@ namespace Data.Mapping
             Map(x => x.DS_TipoReq).Column("DS_TIPOREQ");
             Map(x => x.Setor).Column("SETOR");
             Map(x => x.Requisitante).Column("REQUISITANTE");
-            Map(x => x.Posicao_Funcional).Column("POSICAO_FUNCIONAL");
-            Map(x => x.DSPosicao_Funcional).Column("DSPOSICAO_FUNCIONAL");
+            //Map(x => x.Posicao_Funcional).Column("POSICAO_FUNCIONAL");
+            //Map(x => x.DSPosicao_Funcional).Column("DSPOSICAO_FUNCIONAL");
             Map(x => x.Observacao).Column("OBSERVACAO");
             Map(x => x.DataMov).Column("DATAMOV");
             Map(x => x.Etape).Column("ETAPE");
@@ -45,7 +45,7 @@ namespace Data.Mapping
             Map(x => x.Valor_Total).Column("VALOR_TOTAL");
             Map(x => x.SqAprovacao).Column("SQAPROVACAO");
             Map(x => x.SqItemLinhaAprov).Column("SQITEMLINHAAPROV");
-            Map(x => x.Cat_Funcional).Column("CAT_FUNCIONAL");
+            //Map(x => x.Cat_Funcional).Column("CAT_FUNCIONAL");
             Map(x => x.SqItemAprovacao).Column("SQITEMAPROVACAO");
             Map(x => x.Usuario_Aprovador).Column("USUARIO_APROVADOR");
         }

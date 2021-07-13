@@ -24,10 +24,10 @@ namespace Service.Services
         private readonly IMapper _mapper;
 
         public ShoopingService(
-            IRepository<Requisicao> repository, 
-            IRepository<ItemRequisicao> itrepository, 
-            IRepository<DetReqPagamento> drpRepository, 
-            IRepository<AnexoRequisicao> anexorepository, 
+            IRepository<Requisicao> repository,
+            IRepository<ItemRequisicao> itrepository,
+            IRepository<DetReqPagamento> drpRepository,
+            IRepository<AnexoRequisicao> anexorepository,
             IMapper mapper)
         {
             _repository = repository;
@@ -75,7 +75,16 @@ namespace Service.Services
         {
             try
             {
-                var requisicoes = _anexorepository.QuerySelect().Where(x => x.ReqNumero == Requisicao).ToList();
+
+                //var requisicoes = _anexorepository.QuerySelect().Where(x => x.ReqNumero == Requisicao).ToList();
+                var requisicoes = _anexorepository.ExecuteQuerySelect($@"select 
+                                    ARC_NUMERO ReqNumero,
+                                    ARC_CODIGO Codigo,
+                                    ARC_ANEXO Anexo,
+                                    ARC_FILENAME FileName
+                                from anexoreqcompra_arc
+                                where arc_numero = '{Requisicao}'
+                                ");
                 return _mapper.Map<IEnumerable<AnexoRequisicaoDTO>>(requisicoes);
             }
             catch (Exception ex)
@@ -166,9 +175,9 @@ namespace Service.Services
                                 TRQ_DESCRICAO     DS_TIPOREQ,
                                 rco_setor         SETOR,
                                 rco_requisitante  REQUISITANTE,
-                                APR.ESF_CODIGO    POSICAO_FUNCIONAL,
-                                ESF.ESF_DESCRICAO DSPOSICAO_FUNCIONAL,
-                        ESF.ESF_CATEGFUNC CAT_FUNCIONAL, --** NOVO CAMPO
+                                -- APR.ESF_CODIGO    POSICAO_FUNCIONAL,
+                                -- ESF.ESF_DESCRICAO DSPOSICAO_FUNCIONAL,
+                                -- ESF.ESF_CATEGFUNC CAT_FUNCIONAL, --** NOVO CAMPO
                                 rco_obs           OBSERVACAO,
                                 rco_dtmov         DATAMOV,
                                 rco_etape         ETAPE,
