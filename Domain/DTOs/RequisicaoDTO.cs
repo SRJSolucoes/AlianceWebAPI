@@ -56,7 +56,7 @@ namespace Domain.DTOs
         public String Desc_Pagamento { get; set; }
         public String Cod_Emp_Origem { get; set; }
         public String Nome_Emp_Origem { get; set; }
-        public String Dt_Prog_Pag { get; set; }
+        public DateTime Dt_Prog_Pag { get; set; }
         public String Observacao_Titulo { get; set; }
 
     }

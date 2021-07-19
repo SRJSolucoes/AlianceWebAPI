@@ -57,7 +57,7 @@ namespace Domain.Entidades
         public virtual String Desc_Pagamento { get; set; }
         public virtual String Cod_Emp_Origem { get; set; }
         public virtual String Nome_Emp_Origem { get; set; }
-        public virtual String Dt_Prog_Pag { get; set; }
+        public virtual DateTime Dt_Prog_Pag { get; set; }
         public virtual String Observacao_Titulo { get; set; }
 
 
