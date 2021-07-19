@@ -48,6 +48,20 @@ namespace Data.Mapping
             //Map(x => x.Cat_Funcional).Column("CAT_FUNCIONAL");
             Map(x => x.SqItemAprovacao).Column("SQITEMAPROVACAO");
             Map(x => x.Usuario_Aprovador).Column("USUARIO_APROVADOR");
+
+            //Novos campos
+            Map(x => x.Cod_Requisitante).Column("COD_REQUISITANTE");
+            Map(x => x.Nome_Requisitante).Column("NOME_REQUISITANTE");
+            Map(x => x.Documento).Column("DOCUMENTO");
+            Map(x => x.Cod_Tipocobranca).Column("COD_TIPOCOBRANCA");
+            Map(x => x.Tipo_Cobranca).Column("TIPO_COBRANCA");
+            Map(x => x.Posicao_Funcional).Column("POSICAO_FUNCIONAL");
+            Map(x => x.DSPosicao_Funcional).Column("DSPOSICAO_FUNCIONAL");
+            Map(x => x.Desc_Pagamento).Column("DESC_PAGAMENTO ");
+            Map(x => x.Cod_Emp_Origem).Column("COD_EMP_ORIGEM");
+            Map(x => x.Nome_Emp_Origem).Column("NOME_EMP_ORIGEM");
+            Map(x => x.Dt_Prog_Pag).Column("DT_PROG_PAG");
+            Map(x => x.Observacao_Titulo).Column("OBSERVACAO_TITULO");
         }
     }
 }

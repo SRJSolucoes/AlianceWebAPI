@@ -47,6 +47,19 @@ namespace Domain.Entidades
         public virtual Int64 SqItemAprovacao { get; set; }
         public virtual String Usuario_Aprovador { get; set; }
 
+        public virtual String Cod_Requisitante { get; set; }
+        public virtual String Nome_Requisitante { get; set; }
+        public virtual String Documento { get; set; }
+        public virtual String Cod_Tipocobranca { get; set; }
+        public virtual String Tipo_Cobranca { get; set; }
+        public virtual String Posicao_Funcional { get; set; }
+        public virtual String DSPosicao_Funcional { get; set; }
+        public virtual String Desc_Pagamento { get; set; }
+        public virtual String Cod_Emp_Origem { get; set; }
+        public virtual String Nome_Emp_Origem { get; set; }
+        public virtual String Dt_Prog_Pag { get; set; }
+        public virtual String Observacao_Titulo { get; set; }
+
 
     }
 }

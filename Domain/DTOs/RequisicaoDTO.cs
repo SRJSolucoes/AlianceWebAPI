@@ -44,5 +44,20 @@ namespace Domain.DTOs
         public String Tipo { get; set; }
         public Double Valor_Total { get; set; }
 
+        //Novos campos 18/07/2021
+
+        public String Cod_Requisitante { get; set; }
+        public String Nome_Requisitante { get; set; }
+        public String Documento { get; set; }
+        public String Cod_Tipocobranca { get; set; }
+        public String Tipo_Cobranca { get; set; }
+        public String Posicao_Funcional { get; set; }
+        public String DSPosicao_Funcional { get; set; }
+        public String Desc_Pagamento { get; set; }
+        public String Cod_Emp_Origem { get; set; }
+        public String Nome_Emp_Origem { get; set; }
+        public String Dt_Prog_Pag { get; set; }
+        public String Observacao_Titulo { get; set; }
+
     }
 }

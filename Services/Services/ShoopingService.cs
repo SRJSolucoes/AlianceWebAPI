@@ -194,7 +194,19 @@ namespace Service.Services
                                 rco_encerram      ENCERRAM,
                                 rco_destinacao    DESTINACAO,
                                 rco_ccusto        CCUSTO,
-                                TCPR_VLRTITULO    VALOR_TOTAL
+                                TCPR_VLRTITULO    VALOR_TOTAL,
+                                RCO.RCO_REQUISITANTE       COD_REQUISITANTE,
+                                USO_REQ.USO_NOME           NOME_REQUISITANTE,
+                                TCPR.TCPR_NOTITULO         DOCUMENTO,
+                                TCPR.TCPR_CDTPCOBR         COD_TIPOCOBRANCA,
+                                TPC.TCP_DSTPCOBR           TIPO_COBRANCA,
+                                RCO.RCO_POSFUNC            POSICAO_FUNCIONAL,
+                                ESF.ESF_DESCRICAO          DSPOSICAO_FUNCIONAL,
+                                RCO.RCO_JUSTIFICATIVA      DESC_PAGAMENTO ,
+                                TCPR.TCPR_CDEMPORI         COD_EMP_ORIGEM,
+                                EMP_ORIGEM.EMP_NOME        NOME_EMP_ORIGEM,
+                                TCPR.TCPR_DTPROG           DT_PROG_PAG,
+                                TCPR.TCPR_OBS              OBSERVACAO_TITULO
                   FROM REQCOMPRA_RCO     RCO,
                        EMPGERAL_EMP      EMP,
                        MOEDA_MOE         MOE,
@@ -202,6 +214,9 @@ namespace Service.Services
                        ESTRFUNC_ESF      ESF,
                        TITCP_TCPR        TCPR,
                        FORNEC_FOR,
+                       USUARIO_USO USO_REQ,
+                       TPCOBR_TCP TPC,
+                       EMPGERAL_EMP EMP_ORIGEM,
                        (
 
                        SELECT DISTINCT * FROM (
@@ -283,10 +298,14 @@ namespace Service.Services
                    AND RCO.RCO_MOEDA = MOE.MOE_CODIGO
                    AND RCO.RCO_TIPO = TRQ.TRQ_CODIGO
                    AND RCO.RCO_EMPRESA = ESF.ESF_CDEMPRESA
-                   AND APR.ESF_CODIGO = ESF.ESF_CODIGO
+                   -- AND APR.ESF_CODIGO = ESF.ESF_CODIGO
+                   AND RCO.RCO_POSFUNC = ESF.ESF_CODIGO
                    AND RCO.RCO_NUMERO = TCPR_NOPEDCOMPRA (+)
                    AND TCPR.TCPR_CDFOR = FOR_CODIGO (+)
                    AND RCO_NUMERO = APR.RAIR_NUMEROREQ
+                   AND RCO.RCO_REQUISITANTE = USO_REQ.USO_CODIGO 
+                   AND TCPR.TCPR_CDTPCOBR = TPC.TCP_CDTPCOBR (+) 
+                   AND TCPR.TCPR_CDEMPORI = EMP_ORIGEM.EMP_CODIGO (+)
             ";
             return query;
         }
