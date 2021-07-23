@@ -36,7 +36,7 @@ namespace Data.Repository
             var dbConfig = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO : _appSettings.DatabaseConfig;
 
             ISession sessaoDefault = null;
-            var configDefault = SessionFact.GetSessionFact(dbConfig.Usuario, dbConfig.Senha, dbConfig.ServiceName, dbConfig.Host, dbConfig.Port);
+            var configDefault = SessionFact.GetSessionFact(dbConfig.Usuario, dbConfig.Senha, dbConfig.ServiceName, dbConfig.Host, dbConfig.Port, dbConfig.SID);
             if (configDefault != null)
             {
                 sessaoDefault = configDefault.OpenSession();
@@ -58,7 +58,7 @@ namespace Data.Repository
             var userFromBody = currentUserAccessor.GetMXMLoginFromRequestBody();
             if (userFromBody != null && sessaoCustomizada == null)
             {
-                var sessionFact = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha, userFromBody.ServiceName);
+                var sessionFact = SessionFact.GetSessionFact(userFromBody.Usuario, userFromBody.Senha, userFromBody.ServiceName, userFromBody.Host,userFromBody.Port, userFromBody.SID);
                 if (sessionFact != null)
                 {
                     sessaoCustomizada = sessionFact.OpenSession();

@@ -15,6 +15,7 @@ namespace Domain.VO
         [StringLength(100, ErrorMessage = "Senha deve ter no máximo {1} caracteres e no mínimo {2}.", MinimumLength = 2)]
         public string Senha { get; set; }
         public string? ServiceName { get; set; }
+        public string? SID { get; set; }
         public string? Host { get; set; }
         public string? Port { get; set; }
 

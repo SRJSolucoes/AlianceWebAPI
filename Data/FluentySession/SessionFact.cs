@@ -13,21 +13,25 @@ namespace Data.FluentySession
         private static IFluentySessionFactory frameworkSessionFactoryInput;
         private static IFluentySessionFactory frameworkSessionFactoryOutPut;
 
-        public static ISessionFactory GetSessionFact(string usuario, string senha, string serviceName = null, string host = null, string port = null)
+        public static ISessionFactory GetSessionFact(string usuario, string senha, string serviceName = null, string host = null, string port = null, string sid = null)
         {
-            string connectionStringOracle = getOracleConnectionString(usuario, senha, serviceName, host, port);
+            string connectionStringOracle = getOracleConnectionString(usuario, senha, serviceName, host, port, sid);
             frameworkSessionFactoryUserPas = new FluentySessionFactory<AnexoRequisicaoMap>(connectionStringOracle, "oracle");
 
             return frameworkSessionFactoryUserPas.CreateSessionFactory();
         }
 
-        private static string getOracleConnectionString(string usuario, string senha, string serviceName, string host, string port)
+        private static string getOracleConnectionString(string usuario, string senha, string serviceName, string host, string port, string sid)
         {
             var hostName = String.IsNullOrWhiteSpace(host) ? "10.0.100.23" : host;
             var hostPort = String.IsNullOrWhiteSpace(port) ? "1521" : port;
             var hostServiceName = String.IsNullOrWhiteSpace(serviceName) ? "HOM" : serviceName;
 
             var connectionStringOracle = $@"Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = {hostName})(PORT = {hostPort})))(CONNECT_DATA =(SERVICE_NAME = {hostServiceName})));User Id={usuario};Password={senha};";
+            
+            if (!String.IsNullOrWhiteSpace(sid)) {
+                connectionStringOracle = $@"Data Source=(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = {hostName})(PORT = {hostPort})))(CONNECT_DATA =(SID = {sid})));User Id={usuario};Password={senha};";
+            }
             return connectionStringOracle;
         }
 

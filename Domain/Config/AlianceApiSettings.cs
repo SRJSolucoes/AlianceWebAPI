@@ -21,6 +21,7 @@ namespace Domain.Config
             settings.DatabaseConfigFromSO.Senha = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Senha").Value).Value;
             settings.DatabaseConfigFromSO.Host = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Host").Value).Value;
             settings.DatabaseConfigFromSO.ServiceName = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:ServiceName").Value).Value;
+            settings.DatabaseConfigFromSO.SID = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:SID").Value).Value;
             settings.DatabaseConfigFromSO.Port = Configuration.GetSection(Configuration.GetSection("AlianceApiSettings:SODatabaseVariables:Port").Value).Value;
         }
 
@@ -32,6 +33,7 @@ namespace Domain.Config
         public string Senha { get; set; }
         public string Host { get; set; }
         public string ServiceName { get; set; }
+        public string SID { get; set; }
         public string Port { get; set; }
     }
 
@@ -45,6 +47,7 @@ namespace Domain.Config
         public string Senha { get; set; }
         public string Host { get; set; }
         public string ServiceName { get; set; }
+        public string SID { get; set; }
         public string Port { get; set; }
     }
 
