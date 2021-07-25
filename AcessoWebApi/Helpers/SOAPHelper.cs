@@ -111,8 +111,9 @@ namespace PadraoWebApi.Helpers
             return linhaAprovLOC;
         }
 
-        private static string GetTokenUserProcessHeader(LoginVO login)
+        public static string GetTokenUserProcessHeader(LoginVO login)
         {
+            var ambiente = !String.IsNullOrWhiteSpace(login.SID) ? login.SID : login.ServiceName;
             return $@"
                 <urn1:TUserProcessToken 
                     xmlns:urn=""urn:MXMInvokable""
@@ -121,8 +122,8 @@ namespace PadraoWebApi.Helpers
                          <User xsi:type=""xsd:string"">{login.Usuario}</User>
                          <Pw xsi:type=""xsd:string"">{login.Senha}</Pw>
                          <Token xsi:type=""xsd:string""/>
-                         <Amb xsi:type=""xsd:string"">HOM</Amb>
-                         <MultiAmbiente xsi:type=""xsd:string"">HOM_SHP</MultiAmbiente>
+                         <Amb xsi:type=""xsd:string"">{ambiente}</Amb>
+                         <MultiAmbiente xsi:type=""xsd:string"">{login.Usuario}</MultiAmbiente>
                          <PathTemp xsi:type=""xsd:string"">C:\TEMP</PathTemp>
                          <AlteraSecao xsi:type=""xsd:string"">S</AlteraSecao>
                 </urn1:TUserProcessToken> 

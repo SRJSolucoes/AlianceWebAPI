@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using System.Text.RegularExpressions;
 
 namespace PadraoWebApi.Controllers
 {
@@ -179,6 +180,7 @@ namespace PadraoWebApi.Controllers
                     Senha = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Senha : _appSettings.DatabaseConfig.Senha,
                     Host = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Host : _appSettings.DatabaseConfig.Host,
                     ServiceName = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.ServiceName : _appSettings.DatabaseConfig.ServiceName,
+                    SID = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.SID : _appSettings.DatabaseConfig.SID,
                     Port = _appSettings.SODatabaseVariables.ActiveDBfromSO ? _appSettings.DatabaseConfigFromSO.Port : _appSettings.DatabaseConfig.Port
                 };
 
@@ -236,15 +238,42 @@ namespace PadraoWebApi.Controllers
 
                 if (XmlHasCampo(xmlRetorno, "ErroMSGs") && XmlHasCampo(xmlRetorno, "ermErro"))
                 {
+                    var infoBD = Login;
+                    infoBD.Senha = "";
+                    var headerRequest = String.Join(" ", Regex.Split(SOAPHelper.GetTokenUserProcessHeader(infoBD), @"(?:\r\n|\n|\r)"));
+
                     var erroWS = new
                     {
                         Messagem = "O WebService retornou erros",
                         Erros = new
                         {
+                            HeaderBody = headerRequest,
                             CDErro = getCampoFromXml(xmlRetorno, "ermCDErro"),
                             DSErro = getCampoFromXml(xmlRetorno, "ermDSErro", false),
                             MensagemAux = getCampoFromXml(xmlRetorno, "ermMensagemAux", false),
                             Erro = getCampoFromXml(xmlRetorno, "ermErro"),
+                        }
+                    };
+                    return StatusCode((int)HttpStatusCode.BadRequest, erroWS);
+
+                }
+
+                if (XmlHasCampo(xmlRetorno, "faultcode") && XmlHasCampo(xmlRetorno, "faultstring"))
+                {
+                    var infoBD = Login;
+                    infoBD.Senha = "";
+
+                    var headerRequest = String.Join(" ", Regex.Split(SOAPHelper.GetTokenUserProcessHeader(infoBD), @"(?:\r\n|\n|\r)"));
+
+                    var erroWS = new
+                    {
+                        Messagem = "O WebService retornou erros",
+                        Erros = new
+                        {
+
+                            HeaderBody = headerRequest,
+                            CDErro = getCampoFromXml(xmlRetorno, "faultcode"),
+                            Erro = getCampoFromXml(xmlRetorno, "faultstring", false),
                         }
                     };
                     return StatusCode((int)HttpStatusCode.BadRequest, erroWS);
@@ -284,7 +313,17 @@ namespace PadraoWebApi.Controllers
             {
                 campoStr = xmlRetorno.Replace(" ", "");
             }
-            return campoStr.Split("&lt;" + campo + "&gt;")[1].Split("&lt;/" + campo + "&gt;")[0];
+            var info = "";
+            try
+            {
+                info = campoStr.Split("&lt;" + campo + "&gt;")[1].Split("&lt;/" + campo + "&gt;")[0];
+            }
+            catch
+            {
+                info = campoStr.Split("<" + campo + ">")[1].Split("</" + campo + ">")[0];
+            }
+
+            return info;
             //return xmlRetorno.Split(campo)[1].Replace("&gt;", "").Replace("&lt;/", "");
         }
         private static bool XmlHasCampo(string xmlRetorno, string campo)
