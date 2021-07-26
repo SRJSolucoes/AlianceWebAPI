@@ -16,6 +16,7 @@ namespace Domain.VO
         public string Senha { get; set; }
         public string? ServiceName { get; set; }
         public string? SID { get; set; }
+        public string? AmbWs { get; set; }
         public string? Host { get; set; }
         public string? Port { get; set; }
 
